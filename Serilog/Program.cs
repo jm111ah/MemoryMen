@@ -24,6 +24,7 @@ try
     var jsonObject = new { UserId = 1, UserName = "JohnDoe", Role = "Admin" };
     Log.Information(JsonSerializer.Serialize(jsonObject));
 
+
     throw new Exception();
 }
 catch (Exception ex)
