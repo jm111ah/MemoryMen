@@ -6,4 +6,25 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="assets\webfonts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\fontawesome-all.min.css" />
+    <None Include="wwwroot\css\main.css" />
+    <None Include="wwwroot\images\donggam.png" />
+    <None Include="wwwroot\images\finball.png" />
+    <None Include="wwwroot\images\fishmeter.png" />
+    <None Include="wwwroot\images\henu.jpg" />
+    <None Include="wwwroot\images\solup.png" />
+    <None Include="wwwroot\js\breakpoints.min.js" />
+    <None Include="wwwroot\js\browser.min.js" />
+    <None Include="wwwroot\js\jquery.min.js" />
+    <None Include="wwwroot\js\jquery.scrollex.min.js" />
+    <None Include="wwwroot\js\jquery.scrolly.min.js" />
+    <None Include="wwwroot\js\main.js" />
+    <None Include="wwwroot\js\util.js" />
+  </ItemGroup>
+
 </Project>

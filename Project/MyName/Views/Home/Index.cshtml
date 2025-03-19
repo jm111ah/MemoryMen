@@ -1,8 +1,200 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Wrapper -->
+<div id="wrapper">
+    <!-- Main -->
+    <div id="main">
+        <!-- One -->
+        <section id="one">
+            <div class="container">
+                <header class="major">
+                    <h2>백엔드 개발자 포트폴리오</h2>
+                    <h3>
+                        안녕하세요. <br />
+                        멈추지 않는 백엔드 개발자 <br /> 
+                        정성균 입니다.
+                    </h3>
+                </header>
+                <hr />
+                <header class="major">
+                    <h5>이름 : 정성균</h5>
+                    <h5>생년월일 : 93.01.07</h5>
+                    <h5>위치 : 용인시 수지구</h5>
+                    <h5>연락처 : 010-9596-6352</h5>
+                    <h5>이메일 : memoryman93@gmail.com</h5>
+                    @* <h5>학력 : 백석대학교(e-비즈니스학과)</h5> *@
+                    <hr />
+                </header>
+            </div>
+        </section>
+
+        <!-- Two -->
+        <section id="two">
+            <div class="container">
+                <h3>Skills</h3>
+                <p>Language</p>
+                <ul class="feature-icons">
+                    <li class="icon solid fa-code">C#</li>
+                    <li class="icon solid fa-code">JavaScript</li>
+                </ul>
+                <p>Frontend</p>
+                <ul class="feature-icons">
+                    <li class="icon solid fa-bolt">JQuery</li>
+                    <li class="icon solid fa-bolt">HTML</li>
+                    <li class="icon solid fa-bolt">CSS</li>
+                    <li class="icon solid fa-bolt">Razor</li>
+                </ul>
+                <p>Backend</p>
+                <ul class="feature-icons">
+                    <li class="icon solid fa-bolt">MSSQL</li>
+                    <li class="icon solid fa-bolt">.NET</li>
+                    <li class="icon solid fa-bolt">ASP.NET</li>
+                    <li class="icon solid fa-bolt">ASP</li>
+                    <li class="icon solid fa-bolt">AWS</li>
+                    <li class="icon solid fa-bolt">IIS</li>
+                </ul>
+                <p>Tool</p>
+                <ul class="feature-icons">
+                    <li class="icon solid fa-bolt">VisualStudio</li>
+                    <li class="icon solid fa-bolt">GitHub</li>
+                    <li class="icon solid fa-bolt">GitLab</li>
+                    <li class="icon solid fa-bolt">Slack</li>
+                    <li class="icon solid fa-bolt">Notion</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Four -->
+        <section id="three" text-align="center">
+            <div class="container">
+                <h3>Awards</h3>
+                <ul class="icons">
+                    <li>SSAFY 자율 프로젝트 우수상(3등)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Three -->
+        <section id="four">
+            <div class="container">
+                <h3>Portfolio</h3>
+                <div class="features">
+                    <article>
+                        <a href="https://github.com/tunkcalb/donggam" class="image">
+                            <img src="images/donggam.png" alt="" />
+                        </a>
+                        <div class="inner">
+                            <a href="https://github.com/tunkcalb/donggam">
+                                <h4>거리 기반 SNS</h4>
+                                <p>
+                                    SSAFY 자율 프로젝트입니다. <br />
+                                    시간과 공간을 기반으로 한 다양한 컨텐츠에 참여할 수 있으며
+                                    자신의 기록을 공유할 수 있습니다.
+                                </p>
+                            </a>
+                        </div>
+                    </article>
+                    <article>
+                        <a href="https://github.com/tunkcalb/finball" class="image">
+                            <img src="images/finball.png" alt="" />
+                        </a>
+                        <div class="inner">
+                            <a href="https://github.com/tunkcalb/finball">
+                                <h4>자산의 시각화를 제공하는 인터넷 전문 은행</h4>
+                                <p>
+                                    SSAFY 특화 프로젝트입니다. <br />
+                                    공을 통해 자신의 계좌 잔액을 볼 수 있으며, 공을 통한
+                                    재미있는 정산 방식인 핀볼 정산을 제공합니다.
+                                </p>
+                            </a>
+                        </div>
+                    </article>
+                    <article>
+                        <a href="https://github.com/tunkcalb/shinhan-solup"
+                           class="image">
+                            <img src="images/solup.png" alt="" />
+                        </a>
+                        <div class="inner">
+                            <a href="https://github.com/tunkcalb/shinhan-solup">
+                                <h4>
+                                    돈 관리에 어려움을 겪는 소상공인들을 위한 손익 관리 솔루션
+                                    서비스
+                                </h4>
+                                <p>
+                                    SSAFY 신한은행 해커톤 프로젝트입니다. <br />
+                                    사업 운영에 필요한 고정비, 변동비, 예비비, 그리고 카 드와
+                                    현금으로 이루어진 매출을 계좌 분할 없이 관리합니다.
+                                </p>
+                            </a>
+                        </div>
+                    </article>
+                    <article>
+                        <a href="https://github.com/tunkcalb/fishmeter/tree/main"
+                           class="image">
+                            <img src="images/fishmeter.png" alt="" />
+                        </a>
+                        <div class="inner">
+                            <a href="https://github.com/tunkcalb/fishmeter/tree/main">
+                                <h4>물고기 갤러리 및 낚시 정보 공유 서비스</h4>
+                                <p>
+                                    SSAFY 공통 프로젝트입니다. <br />
+                                    사진 한 장으로 어종, 길이, 날짜, 위치 등 다양한 정보를
+                                    알려줍니다.
+                                </p>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Five -->
+        <section id="five" text-align="center">
+            <div class="container">
+                <h3>Certification</h3>
+                <ul class="icons">
+                    <li>정보처리기사(2024.06.18)</li>
+                    <br>
+                    <li>SQLD(2024.04.05)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Six -->
+        <section id="six" text-align="center">
+            <div class="container">
+                <h3>Contact Me</h3>
+                <ul class="icons">
+                    <li>Phone : 010 - 3994 - 3264</li>
+                    <br />
+                    <li>Email : wjdgusdndi@gmail.com</li>
+                    <br />
+                    <li>
+                        Github :
+                        <a href="https://github.com/tunkcalb">
+                            https://github.com/tunkcalb
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <ul class="copyright">
+                <li>&copy; Untitled. All rights reserved.</li>
+                <li style="color: black">
+                    이 사이트는 포트폴리오 용도로 제작하였으며 상업적인 용도로
+                    사용하지 않음을 밝힙니다.
+                </li>
+            </ul>
+        </div>
+    </section>
 </div>
