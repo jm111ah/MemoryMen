@@ -7,10 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="assets\webfonts\" />
+    <Content Remove="wwwroot\css\index.css" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="assets\webfonts\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\index.css" />
     <None Include="wwwroot\css\fontawesome-all.min.css" />
     <None Include="wwwroot\css\main.css" />
     <None Include="wwwroot\images\donggam.png" />

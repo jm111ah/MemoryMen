@@ -1,6 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using MyName.Models;
-using System.Diagnostics;
 
 namespace MyName.Controllers
 {
@@ -18,15 +16,14 @@ namespace MyName.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Project()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult MyName()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
     }
 }
