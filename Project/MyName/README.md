@@ -25,4 +25,6 @@
 
 1. 이 저장소를 클론합니다:
    ```bash
-   git clone https://github.com/your-id/your-repo.git
+   git clone https://github.com/jm111ah/MemoryMen.git
+
+2. 솔루션에 MyName 프로젝트를 추가하여 실행시켜주시면 됩니다.    
