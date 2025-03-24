@@ -52,6 +52,31 @@
 }
 
 
+.github-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    background-color: #f6f8fa;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #24292f;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+    .github-button:hover {
+        background-color: #eaeef2;
+    }
+
+    .github-button img {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+    }
+
+
 
 
 
