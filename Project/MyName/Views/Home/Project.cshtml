@@ -1,75 +1,104 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-    Layout = "_Layout";
+    Layout = "";
 }
 
 
 
-<!-- Wrapper -->
-<div id="wrapper">
-    <!-- Main -->
-    <div id="main">
-        <!-- One -->
-        <section id="one">
-            <div class="container">
-                <header class="major">
-                    <h2>백엔드 개발자 포트폴리오</h2>
-                    <h3>
-                        안녕하세요. <br />
-                        고이지 않는 백엔드 개발자 <br />
-                        정성균 입니다.
-                    </h3>
-                </header>
-                <hr />
-                <header class="major">
-                    <h5>이름 : 정성균</h5>
-                    <h5>생년월일 : 93.01.07</h5>
-                    <h5>위치 : 용인시 수지구</h5>
-                    <h5>연락처 : 010-9596-6352</h5>
-                    <h5>이메일 : memoryman93@gmail.com</h5>
-                    <hr />
-                </header>
-            </div>
-        </section>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>README 스타일 포트폴리오</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.6;
+            color: #333;
+        }
 
-        <!-- Two -->
-        <section id="two">
-            <div class="container">
-                <h3>Skills</h3>
-                <p>Language</p>
-                <ul class="feature-icons">
-                    <li><i class="fa-solid fa-laptop-code"></i> C#</li>
-                    <li><i class="fa-solid fa-laptop-code"></i> JavaScript</li>
-                </ul>
-                <p>Frontend</p>
-                <ul class="feature-icons">
-                    <li><i class="fa-solid fa-paintbrush"></i> JQuery</li>
-                    <li><i class="fa-solid fa-paintbrush"></i> HTML</li>
-                    <li><i class="fa-solid fa-paintbrush"></i> CSS</li>
-                    <li><i class="fa-solid fa-palette"></i> Razor</li> <!-- 디자인 요소 강조 -->
-                </ul>
+        hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 24px 0;
+        }
 
-                <p>Backend</p>
-                <ul class="feature-icons">
-                    <li><i class="fa-solid fa-database"></i> MSSQL</li>
-                    <li><i class="fa-solid fa-server"></i> .NET</li>
-                    <li><i class="fa-solid fa-server"></i> ASP.NET</li>
-                    <li><i class="fa-solid fa-server"></i> ASP</li>
-                    <li><i class="fa-solid fa-cloud"></i> AWS</li>
-                    <li><i class="fa-solid fa-cloud"></i> NCP</li>
-                    <li><i class="fa-solid fa-network-wired"></i> IIS</li> <!-- 네트워크 서버 역할 강조 -->
-                </ul>
+        h2 {
+            font-size: 1.5em;
+            margin-top: 30px;
+        }
 
-                <p>Tool</p>
-                <ul class="feature-icons">
-                    <li><i class="fa-solid fa-wrench"></i> Visual Studio</li>
-                    <li><i class="fa-brands fa-github"></i> GitHub</li>
-                    <li><i class="fa-brands fa-gitlab"></i> GitLab</li>
-                    <li><i class="fa-brands fa-slack"></i> Slack</li>
-                    <li><i class="fa-solid fa-note-sticky"></i> Notion</li> <!-- Notion은 메모 느낌 강조 -->
-                </ul>
+        code {
+            background: #f6f8fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
 
-            </div>
-        </section>
-</div>
+        pre {
+            background: #f6f8fa;
+            padding: 12px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
 
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>✨ Summary</h2>
+    <p><strong>포트폴리오 웹 사이트</strong></p>
+    <p>웹 개발자로 일하면서 나의 경험과 지식을 잘 표현하고 정리하는 공간이 필요하다고 생각하여 만들게 되었습니다.</p>
+
+    <hr>
+
+    <h2>🌐 Deployment</h2>
+    <p>🔗 대기중</p>
+
+    <hr>
+
+    <h2>📦 Tech Stack</h2>
+    <p>.NET, HTML, CSS</p>
+
+    <hr>
+
+    <h2>🚀 주요 기능</h2>
+    <ul>
+        <li>자기소개</li>
+        <li>스킬</li>
+        <li><a href="https://github.com">GitHub</a>, 블로그</li>
+        <li>프로젝트</li>
+        <li>커리어</li>
+        <li>자격증</li>
+    </ul>
+
+    <hr>
+
+    <h2>🛠 실행 방법 (Visual Studio 2022 기준)</h2>
+    <ol>
+        <li>이 저장소를 클론합니다:</li>
+    </ol>
+<pre><code>git clone https://github.com/jm111ah/MemoryMen.git</code></pre>
+
+    <h2>🖼️ Preview</h2>
+    <p>포트폴리오 페이지 미리보기</p>
+    <img src="~/images/blog.png" alt="포트폴리오 미리보기 이미지" style="max-width: 100%; border: 1px solid #ddd; border-radius: 8px; margin-top: 10px;">
+
+
+</body>
+</html>
