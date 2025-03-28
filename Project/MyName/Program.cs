@@ -6,6 +6,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+#region DB DI
+
+builder.Services.AddScoped<IDbContext, DbContext>();
+
+#endregion
+
 var app = builder.Build();
 
 app.UseHttpsRedirection();
@@ -15,11 +21,7 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-#region DB DI
 
-builder.Services.AddScoped<IDbContext, DbContext>();
-
-#endregion
 
 app.MapControllerRoute(
     name: "default",
