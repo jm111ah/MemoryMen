@@ -7,10 +7,10 @@ using Microsoft.Extensions.Hosting;
 var host = Host.CreateDefaultBuilder(args)
     .ConfigureServices((context, services) =>
     {
-        services.AddScoped<IGreeter, Greeter>();
+        services.AddScoped<IDbContext, DbContext>();
     })
     .Build();
 
 
-var greeter = host.Services.GetRequiredService<IGreeter>();
-Console.WriteLine(greeter.GetName("MM"));
+var greeter = host.Services.GetRequiredService<IDbContext>();
+Console.WriteLine(greeter.GetName());

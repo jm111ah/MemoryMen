@@ -1,5 +1,7 @@
+using Dapper;
 using Microsoft.AspNetCore.Mvc;
 using MyName.Interface;
+using System.Data;
 
 namespace MyName.Controllers
 {
@@ -21,6 +23,11 @@ namespace MyName.Controllers
 
         public IActionResult Project()
         {
+            using (IDbConnection db = _dbContext.GetConnection())
+            {
+                
+            }
+
             return View();
         }
 
