@@ -1,3 +1,6 @@
+using LGM.Interface;
+using LGM.Service;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,18 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+#region DI (의존성 주입)
+
+builder.Services.AddScoped<IDbContext, DbContext>();
+
+#endregion
+
+#region JWT 
+
+
+
+#endregion
 
 var app = builder.Build();
 
