@@ -1,5 +1,6 @@
 ﻿using LGM.Dto;
 using LGM.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LGM.Controllers
@@ -18,7 +19,7 @@ namespace LGM.Controllers
 
         [HttpGet]
         [Route("JWT")]
-        public async Task<IActionResult> GetToken([FromBody] HomeDto homeDto)
+        public async Task<IActionResult> GetToken([FromQuery] HomeDto homeDto)
         {
             try
             {
@@ -31,6 +32,7 @@ namespace LGM.Controllers
             }
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAsync([FromQuery] HomeDto homeDto)
         {
