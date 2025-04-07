@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 #region config setting
 
 var config = builder.Configuration;
+var jwtSettings = config.GetSection("JwtSettings");
 
 #endregion
 
@@ -54,8 +55,6 @@ builder.Services.AddSwaggerGen(options =>
 
 #endregion
 
-
-
 #region DI (의존성 주입)
 
 builder.Services.AddScoped<IDbContext, DbContext>();
@@ -65,20 +64,18 @@ builder.Services.AddSingleton<JWT>();
 
 #region JWT 
 
-var jwtSettings = config.GetSection("JwtSettings");
-
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>
     {
         options.TokenValidationParameters = new TokenValidationParameters
         {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = jwtSettings["Issuer"],
-            ValidAudience = jwtSettings["Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["SecretKey"]!))
+            ValidateIssuer = true, // 토큰 발급자 검증 여부
+            ValidateAudience = true, // 토큰 대상 검증 여부
+            ValidateLifetime = true, // 토큰 만료시간 검증 여부
+            ValidateIssuerSigningKey = true, // 서명키 검증 여부
+            ValidIssuer = jwtSettings["Issuer"], // 허용할 발급자
+            ValidAudience = jwtSettings["Audience"], // 허용할 대상자
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["SecretKey"]!)) // 서명 검증하기 위한 키
         };
     });
 
@@ -94,13 +91,12 @@ if (app.Environment.IsDevelopment())
 
 #region 인증 미들웨어
 
-app.UseAuthentication();
+app.UseAuthentication(); // 누구인지 확인
+app.UseAuthorization(); // 권한이 있는지 확인
 
 #endregion
 
 app.UseHttpsRedirection();
-
-app.UseAuthorization();
 
 app.MapControllers();
 
