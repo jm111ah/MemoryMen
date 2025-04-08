@@ -34,7 +34,7 @@ builder.Services.AddSwaggerGen(options =>
         Scheme = "Bearer",
         BearerFormat = "JWT",
         In = ParameterLocation.Header,
-        Description = "JWT 토큰을 'Bearer {token}' 형식으로 입력하세요.\n예: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6..."
+        Description = "발급 받은 토큰을 Bearer MemoryToken12345.......... 형식으로 입력해주세요."
     });
 
     options.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -58,7 +58,8 @@ builder.Services.AddSwaggerGen(options =>
 #region DI (의존성 주입)
 
 builder.Services.AddScoped<IDbContext, DbContext>();
-builder.Services.AddSingleton<JWT>();
+builder.Services.AddScoped<IHome, HomeService>();
+builder.Services.AddScoped<IJWT, Jwt>
 
 #endregion
 
@@ -75,7 +76,7 @@ builder.Services.AddAuthentication("Bearer")
             ValidateIssuerSigningKey = true, // 서명키 검증 여부
             ValidIssuer = jwtSettings["Issuer"], // 허용할 발급자
             ValidAudience = jwtSettings["Audience"], // 허용할 대상자
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["SecretKey"]!)) // 서명 검증하기 위한 키
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["SecretKey"]!)) // 보안키 생성
         };
     });
 
@@ -91,8 +92,8 @@ if (app.Environment.IsDevelopment())
 
 #region 인증 미들웨어
 
-app.UseAuthentication(); // 누구인지 확인
-app.UseAuthorization(); // 권한이 있는지 확인
+app.UseAuthentication(); // 인증 정보 확인
+app.UseAuthorization(); // 권한 확인
 
 #endregion
 
