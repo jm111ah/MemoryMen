@@ -19,14 +19,12 @@ var jwtSettings = config.GetSection("JwtSettings");
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
-#region 
+#region 스웨거에 인증 추가
 
 builder.Services.AddSwaggerGen(options =>
 {
-    /// 스웨거 문서의 메타 정보 지정
     options.SwaggerDoc("v1", new OpenApiInfo { Title = "MemoryMan LGM API", Version = "v1" });
-
-    // 스웨거에서 
+    
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -59,7 +57,7 @@ builder.Services.AddSwaggerGen(options =>
 
 builder.Services.AddScoped<IDbContext, DbContext>();
 builder.Services.AddScoped<IHome, HomeService>();
-builder.Services.AddScoped<IJWT, Jwt>
+builder.Services.AddScoped<IJWT, JWTService>();
 
 #endregion
 
@@ -90,9 +88,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-#region 인증 미들웨어
+#region 인증 및 권한 추가
 
-app.UseAuthentication(); // 인증 정보 확인
+app.UseAuthentication(); // 인증 확인
 app.UseAuthorization(); // 권한 확인
 
 #endregion
