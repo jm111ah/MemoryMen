@@ -7,10 +7,10 @@ namespace LGM.Interface
     {
         public  Task<MemberEntity> SelectMember(MemberDto memberDto);
 
-        public Task<MemberEntity> InsertMember(MemberDto memberDto);
+        public Task<MemberDto> InsertMember(MemberDto memberDto);
 
-        public Task<MemberEntity> UpdateMember(MemberDto memberDto);
+        public Task<MemberDto> UpdateMember(MemberDto memberDto);
 
-        public Task<MemberEntity> DeleteMember(MemberDto memberDto);
+        public Task<MemberDto> DeleteMember(MemberDto memberDto);
     }
 }
