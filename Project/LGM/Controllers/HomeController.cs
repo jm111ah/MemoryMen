@@ -34,23 +34,23 @@ namespace LGM.Controllers
                 #region 사용자 데이터 추출
 
                 MemberDto memberDto = new MemberDto();
-                //memberDto.Name = homeDto.Name;
+                memberDto.Name = homeDto.Name;
 
-                //var data = await _home.SelectMember(memberDto);
+                var data = await _home.SelectMember(memberDto);
 
                 #endregion
 
                 #region JWT 발급
 
                 // 원본 데이터
-                //memberDto.NameIdentifier = data.MemberSeq.ToString();
-                //memberDto.Name = data.MemberName;
-                //memberDto.Role = data.RoldId == MemberEnum.Admin ? "Admin" : "User";
+                memberDto.NameIdentifier = data.MemberSeq.ToString();
+                memberDto.Name = data.MemberName;
+                memberDto.Role = data.RoleId == MemberEnum.Admin ? "Admin" : "User";
 
                 // 테스트 데이터
-                memberDto.NameIdentifier = "1";
-                memberDto.Name = "테스터";
-                memberDto.Role = "Admin";
+                //memberDto.NameIdentifier = "1";
+                //memberDto.Name = "테스터";
+                //memberDto.Role = "Admin";
 
 
                 var token = await _jwt.GenerateToken(memberDto);
@@ -76,27 +76,55 @@ namespace LGM.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAsync([FromQuery] HomeDto homeDto)
         {
-            return Ok();
+            try
+            {
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
         }
 
         [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] HomeDto homeDto)
         {
-            return Ok();
+            try
+            {
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
         }
         [Authorize(Roles ="Admin")]
-        [HttpPut]
-        public async Task<IActionResult> UpdateAsync([FromBody] HomeDto homeDto)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateAsync(int id,[FromBody] HomeDto homeDto)
         {
-            return Ok();
+            try
+            {
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
         }
 
         [Authorize(Roles ="Admin")]
-        [HttpDelete]
-        public async Task<IActionResult> DeleteAsync([FromBody] HomeDto homeDto)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAsync(int id)
         {
-            return Ok();
+            try
+            {
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
         }
     }
 }

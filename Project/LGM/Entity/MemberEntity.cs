@@ -8,7 +8,7 @@ namespace LGM.Entity
 
         public string MemberId { get; set; } = "";
 
-        public MemberEnum RoldId { get; set; }
+        public MemberEnum RoleId { get; set; }
 
         public string MemberName { get; set; } = "";
     }
