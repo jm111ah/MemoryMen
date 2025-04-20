@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <Folder Include="assets\webfonts\" />
-    <Folder Include="Models\" />
+    <Folder Include="Entity\" />
   </ItemGroup>
 
   <ItemGroup>

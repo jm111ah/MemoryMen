@@ -1,5 +1,6 @@
 using Dapper;
 using Microsoft.AspNetCore.Mvc;
+using MyName.Dto;
 using MyName.Interface;
 using System.Data;
 
@@ -23,15 +24,15 @@ namespace MyName.Controllers
 
         public IActionResult Project()
         {
-            using (IDbConnection db = _dbContext.GetConnection())
-            {
-                
-            }
-
             return View();
         }
 
         public IActionResult MyName()
+        {
+            return View();
+        }
+
+        public IActionResult Project_GoMyAPI()
         {
             return View();
         }
