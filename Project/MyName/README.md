@@ -7,7 +7,7 @@
 ---
 
 ## 🌍 Deployment  
-🔗 대기중
+🔗 http://memoryman.dokky.kr/
 
 ---
 
