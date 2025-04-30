@@ -400,3 +400,4 @@ FodyWeavers.xsd
 /*.sln
 /Project/MyName/appsettings.json
 /Project/LGM/appsettings.json
+/SQLD/appsettings.json
