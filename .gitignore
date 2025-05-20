@@ -402,3 +402,4 @@ FodyWeavers.xsd
 /Project/LGM/appsettings.json
 /SQLD/appsettings.json
 /Test/TestConsole/TestConsole.csproj
+/Project/LGM/appsettings.Development.json
