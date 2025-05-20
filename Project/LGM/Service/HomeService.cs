@@ -23,7 +23,6 @@ namespace LGM.Service
                 DynamicParameters param = new DynamicParameters();
                 param.Add("@MemberName", memberDto.Name);
                 var result = await db.QueryFirstAsync<MemberEntity>(MemberQuery.SelectMember, param);
-                var query = await db.QuerySingleOrDefaultAsync<MemberEntity>(MemberQuery.SelectMember);
                 return result;
             }
         }

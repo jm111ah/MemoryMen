@@ -32,7 +32,7 @@ builder.Services.AddSwaggerGen(options =>
         Scheme = "Bearer",
         BearerFormat = "JWT",
         In = ParameterLocation.Header,
-        Description = "발급 받은 토큰을 Bearer MemoryToken12345.......... 형식으로 입력해주세요."
+        Description = "발급 받은 토큰을 입력해주세요. (ex : Bearer 발급키)"
     });
 
     options.AddSecurityRequirement(new OpenApiSecurityRequirement

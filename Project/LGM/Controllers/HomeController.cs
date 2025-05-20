@@ -31,27 +31,26 @@ namespace LGM.Controllers
         {
             try
             {
-                #region 사용자 데이터 추출
+                #region 데이터 추출
 
                 MemberDto memberDto = new MemberDto();
                 memberDto.Name = homeDto.Name;
 
-                var data = await _home.SelectMember(memberDto);
+                //var data = await _home.SelectMember(memberDto);
 
                 #endregion
 
                 #region JWT 발급
 
                 // 원본 데이터
-                memberDto.NameIdentifier = data.MemberSeq.ToString();
-                memberDto.Name = data.MemberName;
-                memberDto.Role = data.RoleId == MemberEnum.Admin ? "Admin" : "User";
+                //memberDto.NameIdentifier = data.MemberSeq.ToString();
+                //memberDto.Name = data.MemberName;
+                //memberDto.Role = data.RoleId == MemberEnum.Admin ? "Admin" : "User";
 
                 // 테스트 데이터
-                //memberDto.NameIdentifier = "1";
-                //memberDto.Name = "테스터";
-                //memberDto.Role = "Admin";
-
+                memberDto.NameIdentifier = "1";
+                memberDto.Name = "테스터";
+                memberDto.Role = "Admin";
 
                 var token = await _jwt.GenerateToken(memberDto);
 
