@@ -1,4 +1,3 @@
-using LGM.Dto;
 using LGM.Interface;
 using LGM.Service;
 using Microsoft.IdentityModel.Tokens;
@@ -14,17 +13,18 @@ var jwtSettings = config.GetSection("JwtSettings");
 
 #endregion
 
-// Add services to the container.
-
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
-#region 스웨거에 인증 추가
+#region swagger setting
 
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo { Title = "MemoryMan LGM API", Version = "v1" });
-    
+
+    options.SwaggerDoc("v2", new OpenApiInfo { Title = "V2", Version = "v2" });
+
+
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -49,6 +49,8 @@ builder.Services.AddSwaggerGen(options =>
             Array.Empty<string>()
         }
     });
+
+
 });
 
 #endregion
@@ -80,13 +82,28 @@ builder.Services.AddAuthentication("Bearer")
 
 #endregion
 
+#region 서비스 등록
+builder.Services.AddHttpClient();
+#endregion
+
 var app = builder.Build();
+
+#region 인증 및 권한 등록
+app.UseAuthentication(); // 인증 확인
+app.UseAuthorization(); // 권한 확인
+#endregion
 
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "TTP API");
+        c.SwaggerEndpoint("/swagger/v2/swagger.json", "Supplier API");
+    });
 }
+
+
 
 #region 인증 및 권한 추가
 

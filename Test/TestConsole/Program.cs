@@ -1,21 +1,29 @@
 ﻿
 
-int N = int.Parse(Console.ReadLine());
-int hansu = 1;
-int hansuCount = 0;
+using System.Diagnostics;
 
-while (true)
+public class Program
 {
-    if (hansu >= N)
+    public static async Task Main()
     {
-        Console.WriteLine(hansuCount);
-        break;
+        var st = Stopwatch.StartNew();
+
+        Task t1 = Default_Hello(1);
+        Task t2 = Default_Hello(2);
+        Task t3 = Default_Hello(3);
+
+        await Task.WhenAll(t1,t2, t3);
+
+        st.Stop();
+        Console.WriteLine(st.ElapsedMilliseconds);
     }
 
-    if (N % hansu == 1)
+    public static async Task Default_Hello(int i)
     {
-        hansuCount++;
+        Console.WriteLine($"{i}번째 Start");
+        await Task.Delay(2000);
+        Console.WriteLine($"{i}번째 End");
     }
 
-    hansu++;
 }
+
