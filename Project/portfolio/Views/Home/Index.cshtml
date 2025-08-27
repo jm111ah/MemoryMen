@@ -1,0 +1,1675 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 개발자 포트폴리오 - 정성균</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            object-fit: cover;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+            color: #2c3e50;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #667eea;
+        }
+
+        /* About Me Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .about-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .about-item i {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .about-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .about-item p {
+            color: #666;
+        }
+
+        /* Introduce Section */
+        .introduce {
+            background: white;
+        }
+
+        .introduce-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .introduce-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .highlight-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: #ffc107;
+            color: #333;
+        }
+
+        .skills .section-title {
+            color: #333;
+        }
+
+        .skills-container {
+            background: #fff3cd;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .skill-category {
+            margin-bottom: 30px;
+        }
+
+        .skill-category h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .skill-category i {
+            font-size: 1.5rem;
+            color: #667eea;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .skill-tag.react {
+            background: #61dafb;
+            color: #000;
+        }
+
+        .skill-tag.javascript {
+            background: #f7df1e;
+            color: #000;
+        }
+
+        .skill-tag.python {
+            background: #3776ab;
+        }
+
+        .skill-tag.django {
+            background: #092e20;
+        }
+
+        .skill-tag.firebase {
+            background: #ffca28;
+            color: #000;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-header {
+            background: #667eea;
+            color: white;
+            padding: 20px;
+        }
+
+        .project-tag {
+            background: #e74c3c;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .project-date {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .project-body {
+            padding: 25px;
+        }
+
+        .project-description {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .project-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .project-features li {
+            padding: 5px 0;
+            color: #666;
+        }
+
+        .project-features li::before {
+            content: '•';
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .project-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .project-tech {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #856404;
+        }
+
+        .project-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-readme {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-readme:hover {
+            background: #5a6268;
+        }
+
+        .btn-demo {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-demo:hover {
+            background: #218838;
+        }
+
+        /* Image Modal Styles */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .image-modal-content {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            margin: 2% auto;
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            position: relative;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideUp 0.4s ease;
+        }
+
+        .image-modal-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 40px 25px 40px;
+            position: relative;
+        }
+
+        .image-modal-header h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .image-modal-header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .image-modal-body {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .project-image-large {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+
+        .image-description {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid #dee2e6;
+            text-align: left;
+        }
+
+        .image-description h3 {
+            margin: 0 0 15px 0;
+            color: #495057;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .image-description p {
+            margin: 0;
+            color: #6c757d;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .image-close {
+            position: absolute;
+            right: 25px;
+            top: 25px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            color: #666;
+            transition: all 0.3s ease;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        .image-close:hover {
+            background: #e74c3c;
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        .btn-image {
+            background: #17a2b8;
+            color: white;
+        }
+
+        .btn-image:hover {
+            background: #138496;
+        }
+
+        /* Multiple Images Styles */
+        .project-images-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .project-image-item {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e9ecef;
+        }
+
+        .project-image-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .project-image-item h4 {
+            margin: 0 0 10px 0;
+            color: #495057;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .project-image-item p {
+            margin: 0;
+            color: #6c757d;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Custom Scrollbar for Image Modal */
+        .image-modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .image-modal-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .image-modal-content::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 4px;
+        }
+
+        .image-modal-content::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+
+        /* Career Section - Simple Layout */
+        .career-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .career-company {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .company-header {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .company-period {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .company-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .company-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .company-tag {
+            background: #2c3e50;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .career-tasks {
+            list-style: none;
+        }
+
+        .career-task {
+            border-left: 3px solid #667eea;
+            padding-left: 20px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .task-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .task-period {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .task-description {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            margin: 3% auto;
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 700px;
+            max-height: 85vh;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideUp 0.4s ease;
+        }
+
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 25px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            color: #666;
+            transition: all 0.3s ease;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        .close:hover {
+            background: #e74c3c;
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 40px 30px 40px;
+            position: relative;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .modal-header p {
+            margin: 15px 0 0 0;
+            opacity: 0.9;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .modal-body {
+            padding: 40px;
+            overflow-y: auto;
+            max-height: 60vh;
+        }
+
+        .modal-preview {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid #dee2e6;
+        }
+
+        .modal-preview h3 {
+            margin: 0 0 15px 0;
+            color: #495057;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .preview-content {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .preview-image {
+            width: 120px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .preview-info {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .preview-info p {
+            margin: 0 0 8px 0;
+            color: #6c757d;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .preview-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .preview-tag {
+            background: #667eea;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .modal h3 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .modal h3:first-child {
+            margin-top: 0;
+        }
+
+        .modal ul {
+            margin: 0 0 20px 0;
+            padding-left: 20px;
+        }
+
+        .modal li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+            color: #555;
+            position: relative;
+        }
+
+        .modal li::marker {
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .modal a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .modal a:hover {
+            color: #5a6fd8;
+            text-decoration: underline;
+        }
+
+        /* Modal Animations */
+        @@keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @@keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Custom scrollbar for modal */
+        .modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-body::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 4px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb:hover {
+            background: #5a6fd8;
+        }
+
+        /* Responsive Design */
+        @@media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .section {
+                padding: 50px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .career-timeline::before {
+                left: 30px;
+            }
+
+            .career-item {
+                flex-direction: column !important;
+                align-items: flex-start;
+            }
+
+            .career-item:nth-child(even) {
+                flex-direction: column !important;
+            }
+
+            .career-logo {
+                margin: 0 0 20px 0;
+                align-self: flex-start;
+                margin-left: 30px;
+                transform: translateX(-50%);
+            }
+
+            .career-content {
+                margin-left: 60px;
+            }
+        }
+
+        @@media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .project-buttons {
+                flex-direction: column;
+            }
+
+            .modal-content {
+                margin: 10% auto;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header Section -->
+<header class="header">
+    <div class="container">
+        <img src="images/memoryman.jpg" alt="프로필 사진" class="profile-img">
+        <h1>정성균 (메모리맨)</h1>
+        <p class="subtitle">웹 개발자 | Frontend & Backend Developer</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>memoryman0107@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>010-9596-6352</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-link"></i>
+                <span><a href="https://memoryman.tistory.com/page/page-test">memoryman.tistory.com</a></span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <span><a href="https://github.com/jm111ah/MemoryMen">github.com/jm111ah/MemoryMen</a> </span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Introduce Section -->
+<section class="section introduce">
+    <div class="container">
+        <h2 class="section-title">INTRODUCE</h2>
+        <div class="introduce-content">
+            <p>AI 시대에 뒤쳐지지 않고 흐름에 올라타고 싶은 욕심쟁이 개발자 정성균 입니다.</p>
+            <p>항상 변화를 추구하고 불안해하면서도 묵묵히 나아가는 사람이기도 합니다. </p>
+            <p>.NET 기반 웹 개발을 주로 경험하였고, 프론트부터 백엔드까지 모두 개발 가능합니다. </p>
+            <p>최근 4년동안 여행 도메인에 있으면서, 도메인 지식의 중요성에 대해서 알게 되었고 현재 서비스에 부족한게 무엇인지 필요한건 무엇인지 간지러운 부분을 찾아서 기획부터 개발 진행하고
+                있습니다. </p>
+            <p>부족한 부분은 AI와 학습을 통해서 채워가고 혼자서 웹, 앱, 백엔드, 서버까지 서비스 전체를 개발할 수 있는 능력을 갖추고 나만의 서비스를 만드는것이 궁극적인 목표입니다. </p>
+            <p>저는 효율을 중요시하는 사람입니다. </p>
+            <p>커뮤니케이션은 리소스를 낭비하지 않고 올바르게 문제를 해결하는 지름길이라고 생각합니다. </p>
+            <p>겸손한 자세로 지름길을 안내하거나 따라갈 준비가 되어있습니다.</p>
+        </div>
+    </div>
+</section>
+
+<!-- About Me Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">ABOUT ME</h2>
+        <div class="about-grid">
+            <div class="about-item">
+                <i class="fas fa-user"></i>
+                <h3>이름</h3>
+                <p>정성균</p>
+            </div>
+            <div class="about-item">
+                <i class="fas fa-birthday-cake"></i>
+                <h3>생년월일</h3>
+                <p>93.01.07</p>
+            </div>
+            <div class="about-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>위치</h3>
+                <p>경기도 용인시</p>
+            </div>
+            <div class="about-item">
+                <i class="fas fa-phone"></i>
+                <h3>연락처</h3>
+                <p>010-9596-6352</p>
+            </div>
+            <div class="about-item">
+                <i class="fas fa-envelope"></i>
+                <h3>이메일</h3>
+                <p>memoryman0107@gmail.com</p>
+            </div>
+            @* <div class="about-item"> *@
+            @*     <i class="fas fa-graduation-cap"></i> *@
+            @*     <h3>학력</h3> *@
+            @*     <p>서울대학교<br>(컴퓨터공학부)</p> *@
+            @* </div> *@
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="section skills">
+    <div class="container">
+        <h2 class="section-title">SKILLS</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3><i class="fas fa-code"></i> Language</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">C#</span>
+                    <span class="skill-tag javascript">Dart</span>
+                    <span class="skill-tag python">Python</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag react">HTML</span>
+                    <span class="skill-tag javascript">JavaScript</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">JQuery</span>
+                    <span class="skill-tag firebase">Flutter</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-server"></i> Backend</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag django">.NET</span>
+                    <span class="skill-tag">.NET FrameWork</span>
+                    <span class="skill-tag">ASP</span>
+                    <span class="skill-tag firebase">MSSQL</span>
+                    <span class="skill-tag django">AWS</span>
+                    <span class="skill-tag firebase">NCP</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-cloud"></i>Tools</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag career-tasks">GitHub</span>
+                    <span class="skill-tag career-tasks">GitLab</span>
+                    <span class="skill-tag react">Slack</span>
+                    <span class="skill-tag">Notion</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="section projects">
+    <div class="container">
+        <h2 class="section-title">PROJECTS</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-tag">포트폴리오</span>
+                    <div class="project-date">2025.08</div>
+                    <h3 class="project-title">나는 개발자다.</h3>
+                </div>
+                <div class="project-body">
+                    <ul class="project-features">
+                        <li>AI 도구를 활용해 디자인 및 퍼블리싱 구현</li>
+                        <li>도메인 생성부터 배포까지 전체 프로세스 경험</li>
+                        <li>정성균이라는 개발자를 소개할 수 있는 공간</li>
+                    </ul>
+                    <div class="project-tech">HTML/CSS, .NET, V0, AWS, DNS, Cursor</div>
+                    <div class="project-buttons">
+                        <button class="btn btn-readme" onclick="openModal('project1')">📖 README</button>
+                        <button class="btn btn-image" onclick="openImageModal('project1')">🖼️ Detail</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-tag">아이디어</span>
+                    <div class="project-date">2025.04</div>
+                    <h3 class="project-title">유용한 데이터를 시각화하여 의사결정에 도움이 되자!</h3>
+                </div>
+                <div class="project-body">
+                    <ul class="project-features">
+                        <li>데이터 분석과 데이터 시각화 경험</li>
+                        <li>데이터의 중요성 </li>
+                        <li>Linq 사용한 통계 데이터 만들기 </li>
+                    </ul>
+                    <div class="project-tech">.NET, MSSQL, Dapper, Task, V0, JavaScript, JQuery, Chart.js</div>
+                    <div class="project-buttons">
+                        <button class="btn btn-readme" onclick="openModal('project3')">📖 README</button>
+                        <button class="btn btn-image" onclick="openImageModal('project3')">🖼️ Detail</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-tag">문제 해결</span>
+                    <div class="project-date">2024.10</div>
+                    <h3 class="project-title">대용량 데이터 기반, 네이버 톡톡 API 호출</h3>
+                </div>
+                <div class="project-body">
+                    <ul class="project-features">
+                        <li>60만건 회원 데이터 처리 경험</li>
+                        <li>비동기, 병렬 처리 프로세스 경험</li>
+                    </ul>
+                    <div class="project-tech">.NET, PostMan, MSSQL, Task, Parallel, SeriLog</div>
+                    <div class="project-buttons">
+                        <button class="btn btn-readme" onclick="openModal('project2')">📖 README</button>
+                        <button class="btn btn-image" onclick="openImageModal('project2')">🖼️ Detail</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Career Section -->
+<section class="section career">
+    <div class="container">
+        <h2 class="section-title">CAREER</h2>
+        <div class="career-container">
+            <div class="career-company">
+                <h3 class="company-header">(주) 트립토파즈</h3>
+                <p class="company-period">2021.09 - (재직 중)</p>
+                <p class="company-description">“네이버와 제휴하여 대규모 트래픽을 처리하는 숙박·여행 예약 플랫폼”</p>
+
+                <div class="career-tasks">
+                    <div class="career-task">
+                        <div class="task-title">백오피스 리팩토링</div>
+                        <div class="task-period">2025년 하반기 - (진행 중)</div>
+                        <div class="task-description">사내에서 사용하는 인트라넷 느린 속도와 반응형이 아닌 부분을 해결하고자 기획 및 개발</div>
+                        <br/>
+                        <div class="company-tags">
+                            <span class="company-tag">V0</span>
+                            <span class="company-tag">HTML/CSS</span>
+                            <span class="company-tag">JavaScript</span>
+                            <span class="company-tag">JQuery</span>
+                            <span class="company-tag">.NET9</span>
+                            <span class="company-tag">Dapper</span>
+                            <span class="company-tag">MSSQL</span>
+                            <span class="company-tag">NCP</span>
+                        </div>
+                    </div>
+                    <div class="career-task">
+                        <div class="task-title">통계 데이터 시각화</div>
+                        <div class="task-period">2025년 상반기</div>
+                        <div class="task-description">유용한 데이터를 시각화하여 트립토파즈 내부 의사결정에 도움이 되고자 기획 및 개발</div>
+                        <br/>
+                        <div class="company-tags">
+                            <span class="company-tag">V0</span>
+                            <span class="company-tag">HTML/CSS</span>
+                            <span class="company-tag">JavaScript</span>
+                            <span class="company-tag">JQuery</span>
+                            <span class="company-tag">Chart.js</span>
+                            <span class="company-tag">.NET9</span>
+                            <span class="company-tag">Dapper</span>
+                            <span class="company-tag">MSSQL</span>
+                            <span class="company-tag">NCP</span>
+                        </div>
+                    </div>
+                    <div class="career-task">
+                        <div class="task-title">네이버 톡톡 API 개발</div>
+                        <div class="task-period">2024년 하반기</div>
+                        <div class="task-description">마케팅 동의한 고객들 대상으로 네이버 톡톡 알람 발송하기 위해서 개발</div>
+                        <br/>
+                        <div class="company-tags">
+                            <span class="company-tag">.NET6</span>
+                            <span class="company-tag">Dapper</span>
+                            <span class="company-tag">Task</span>
+                            <span class="company-tag">Parallel</span>
+                            <span class="company-tag">async/await</span>
+                            <span class="company-tag">MSSQL</span>
+                        </div>
+                    </div>
+                    <div class="career-task">
+                        <div class="task-title">하나투어 API 개발</div>
+                        <div class="task-period">2024년 상반기</div>
+                        <div class="task-description">공급채널 하나투어 데이터 조회, 예약, 취소 기능을 위한 연동 개발</div>
+                        <br/>
+                        <div class="company-tags">
+                            <span class="company-tag">.NET6</span>
+                            <span class="company-tag">.NET FrameWork 4.8</span>
+                            <span class="company-tag">Dapper</span>
+                            <span class="company-tag">MSSQL</span>
+                        </div>
+                    </div>
+                    <div class="career-task">
+                        <div class="task-title">백오피스 및 프론트 관리 및 개발</div>
+                        <div class="task-period">2021년 하반기 - (진행중)</div>
+                        <div class="task-description">백오피스와 프론트 유지보수 및 개발</div>
+                        <br/>
+                        <div class="company-tags">
+                            <span class="company-tag">HTML/CSS</span>
+                            <span class="company-tag">JavaScript</span>
+                            <span class="company-tag">JQuery</span>
+                            <span class="company-tag">.NET6</span>
+                            <span class="company-tag">.NET FrameWork 4.8</span>
+                            <span class="company-tag">Dapper</span>
+                            <span class="company-tag">MSSQL</span>
+                            <span class="company-tag">NCP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="career-company">
+                <h3 class="company-header">(주) 인터파크 비즈마켓</h3>
+                <p class="company-period">2019.08 - 2021.08 (2년)</p>
+                <p class="company-description">“기업 고객을 대상으로 한 여행·상품·서비스 통합 B2B 플랫폼”</p>
+                <div class="career-tasks">
+                    <div class="career-task">
+                        <div class="task-title">고객사 임직원몰 개발</div>
+                        <div class="task-period">2020년 상반기 - 퇴사</div>
+                        <div class="task-description">고객사 임직원 전용 온라인 쇼핑몰 플랫폼 개발</div>
+                        <br/>
+                        <div class="company-tags">
+                            <span class="company-tag">HTML/CSS</span>
+                            <span class="company-tag">JavaScript</span>
+                            <span class="company-tag">JQuery</span>
+                            <span class="company-tag">.NET FrameWork 4.8</span>
+                            <span class="company-tag">MSSQL</span>
+                        </div>
+                    </div>
+                    <div class="career-task">
+                        <div class="task-title">백오피스 관리 및 개발</div>
+                        <div class="task-period">2019년 상반기 - 퇴사</div>
+                        <div class="task-description">백오피스 유지보수 및 기능 개발</div>
+                        <br/>
+                        <div class="company-tags">
+                            <span class="company-tag">ASP</span>
+                            <span class="company-tag">MSSQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="career-company">
+                <h3 class="company-header">(주) 갈라랩</h3>
+                <p class="company-period">2017.01 - 2018.02 (1년 1개월)</p>
+                <p class="company-description">“온라인 및 모바일 게임을 개발, 서비스하는 게임 개발사”</p>
+                <div class="task-description">사내 IDC 서버 환경을 AWS 클라우드 환경으로 이전</div>
+                <br/>
+                <div class="career-tasks">
+                    <div class="career-task">
+                        <div class="task-title">AWS 서버 이전</div>
+                        <div class="task-period">2017년 하반기</div>
+                        <div class="company-tags">
+                            <span class="company-tag">MSSQL</span>
+                            <span class="company-tag">AWS</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div id="readmeModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modalContent">
+            <!-- Modal content will be inserted here -->
+        </div>
+    </div>
+</div>
+
+<!-- Image Modal -->
+<div id="imageModal" class="image-modal">
+    <div class="image-modal-content">
+        <span class="image-close">&times;</span>
+        <div id="imageModalContent">
+            <!-- Image modal content will be inserted here -->
+        </div>
+    </div>
+</div>
+
+<script>
+    // Modal functionality
+    const modal = document.getElementById('readmeModal');
+    const closeBtn = document.getElementsByClassName('close')[0];
+    const modalContent = document.getElementById('modalContent');
+
+    const projectReadmes = {
+        project1: {
+            title: '나는 개발자다 - 포트폴리오 웹사이트',
+            subtitle: 'AI 도구를 활용하여 디자인부터 배포까지 직접 구현한 개발자 포트폴리오',
+            preview: {
+                icon: '👨‍💻',
+                description: '개발자 정성균의 역량과 경험을 보여주는 포트폴리오 웹사이트입니다. AI 도구를 활용하여 디자인부터 배포까지 전체 과정을 직접 구현했습니다.',
+                tags: ['포트폴리오', 'AI 도구', '반응형', 'AWS']
+            },
+            content: `
+                    <h3>🎯 프로젝트 목적</h3>
+                    <ul>
+                        <li>개발자 정성균의 역량과 경험을 보여주는 포트폴리오</li>
+                        <li>AI 기술을 활용한 효율적인 개발 프로세스 경험</li>
+                        <li>전체 개발 과정을 직접 경험하여 실무 역량 향상</li>
+                    </ul>
+                    
+                    <h3>🛠 기술 스택</h3>
+                    <ul>
+                        <li>Frontend: HTML, CSS, JavaScript</li>
+                        <li>Framework: .NET8</li>
+                        <li>Cloud: AWS</li>
+                        <li>Design: V0, Cursor</li>
+                    </ul>
+                    
+                    <h3>✨ 주요 기능</h3>
+                    <ul>
+                        <li>반응형 웹 디자인으로 모든 디바이스 지원</li>
+                        <li>개발자 소개 및 경력 사항</li>
+                        <li>프로젝트 포트폴리오 및 기술 스택</li>
+                    </ul>
+                    
+                    <h3>🚀 개발 과정</h3>
+                    <ul>
+                        <li>AI 도구를 활용한 디자인 및 레이아웃 구성</li>
+                        <li>HTML/CSS를 활용한 반응형 웹사이트 구현</li>
+                        <li>도메인 등록 및 AWS 호스팅 설정</li>
+                        <li>전체 개발 프로세스 직접 경험</li>
+                    </ul>
+                    
+                    <h3>💡 학습 포인트</h3>
+                    <ul>
+                        <li>AI 도구를 활용한 효율적인 개발 워크플로우</li>
+                        <li>도메인 및 호스팅 인프라 구축 경험</li>
+                        <li>포트폴리오 웹사이트 기획 및 제작</li>
+                    </ul>
+                    
+                    <h3>🔗 링크</h3>
+                    <p>현재 보고 계신 웹사이트입니다!</p>
+                `
+        },
+        project2: {
+            title: '네이버 톡톡 API 호출',
+            subtitle: '비동기와 병렬을 사용한 대용량 데이터 처리',
+            preview: {
+                icon: '👨‍💻',
+                description: '60만건이 넘는 회원들에게 톡톡 알림을 보내야하는 상황에서 비동기와 병렬 프로세스를 통한 효율적인 처리',
+                tags: ['비동기', '병렬']
+            },
+            content: `
+                    <h3>🎯 문제 상황</h3>
+                    <ul>
+                        <li>배열을 지원하지 않는 네이버 톡톡 API</li>
+                        <li>일반적인 동기 프로세스 처리시에 너무 오래 걸리는 시간</li>
+                    </ul>
+                    
+                    <h3>🛠 기술 스택</h3>
+                    <ul>
+                        <li>Framework: .NET, Task, Parallel</li>
+                        <li>DB: MSSQL</li>
+                        <li>Tool: PostMan</li>
+                    </ul>
+                    
+                    <h3>✨ 주요 기능</h3>
+                    <ul>
+                        <li>비동기 및 병렬 처리</li>
+                        <li>요청 데이터 가공</li>
+                    </ul>
+                    
+                    <h3>🚀 개발 과정</h3>
+                    <ul>
+                        <li>임시 테이블을 생성하여, 요청 데이터 가공</li>
+                        <li>Task, Parallel 사용한 비동기 병렬 프로세스</li>
+                    </ul>
+                    
+                    <h3>💡 학습 포인트</h3>
+                    <ul>
+                        <li>비동기, 병렬 개발 경험</li>
+                    </ul>
+                `
+        },
+        project3: {
+            title: '데이터분석과 시각화',
+            subtitle: '데이터를 분석하고 유용한 데이터를 시각화하여 의사결정을 도와주는 프로젝트',
+            preview: {
+                icon: '👨‍💻',
+                description: '하루에 200만이 넘는 트래픽과 비례하는 대용량 데이터를 분석하고 시각화하여 현명한 의사결정에 도움이 되고 싶었습니다.',
+                tags: ['데이터 분석', '데이터 시각화', '데이터 가공']
+            },
+            content: `
+                    <h3>🎯 개발 이유</h3>
+                    <ul>
+                        <li>엑셀 형식의 데이터보다 시각화가 회의 자료로 유리하다고 판단</li>
+                        <li>쌓여있는 데이터들을 활용해보고 싶었음</li>
+                    </ul>
+                    
+                    <h3>🛠 기술 스택</h3>
+                    <ul>
+                        <li>Front: V0, JavaScript, JQuery, Chart.js</li>
+                        <li>Back: .NET, Dapper, Task, Linq, MSSQL</li>
+                    </ul>
+                    
+                    <h3>✨ 주요 기능</h3>
+                    <ul>
+                        <li>대용량 데이터를 빠르게 조회</li>
+                        <li>그래프 시각화를 통한 이해하기 쉬운 통계</li>
+                        <li>TOP10 순위를 통한 비교 통계</li>
+                    </ul>
+                    
+                    <h3>🚀 개발 과정</h3>
+                    <ul>
+                        <li>V0 통한 디자인 및 퍼블리싱 작업</li>
+                        <li>Task ,Dapper, Linq 사용한 개발</li>
+                    </ul>
+                    
+                    <h3>💡 학습 포인트</h3>
+                    <ul>
+                        <li>데이터 분석</li>
+                        <li>데이터 통계</li>
+                    </ul>
+                `
+        }
+    };
+
+    const projectImages = {
+        project1: {
+            title: '나는 개발자다 - 포트폴리오 웹사이트',
+            subtitle: 'AI 도구를 활용하여 디자인부터 배포까지 직접 구현한 개발자 포트폴리오',
+            images: [
+                {
+                    src: 'images/po_1.png',
+                    title: '인사',
+                    description: '포트폴리오의 첫인상을 담당하는 영역입니다. 깔끔하고 모던한 디자인으로 방문자에게 깔끔한 인상을 주려고 했습니다.'
+                },
+                {
+                    src: 'images/po_2.png',
+                    title: '소개',
+                    description: '개발자 정성균은 무슨 사람인지 소개하는 섹션입니다.'
+                },
+                {
+                    src: 'images/po_3.png',
+                    title: '스킬',
+                    description: '개발자 정성균이 사용할 수 있는 기술에 대한 섹션입니다.'
+                },
+                {
+                    src: 'images/po_5.png',
+                    title: '프로젝트',
+                    description: '주요 프로젝트들을 카드 형태로 깔끔하게 정리하여 보여주는 프로젝트 섹션입니다.'
+                },
+                {
+                    src: 'images/po_4.png',
+                    title: '커리어',
+                    description: '정성균은 어떤 회사에서 근무했고 어떤일을 했는지 알 수 있는 섹션입니다.'
+                },
+
+            ]
+        },
+        project2: {
+            title: '네이버 톡톡 API 호출',
+            subtitle: '비동기와 병렬을 사용한 대용량 데이터 처리',
+            images: [
+                {
+                    src: '',
+                    title: '문제 상황',
+                    description: '60만건의 고객에게 네이버 톡톡 알림을 보내야하는 상황인데, API가 배열을 지원하지 않았습니다. 1건씩 처리하는 동기 방식은 불가능하다고 판단하여 비동기 방식으로 개발 방향을 잡았습니다.'
+                },
+                {
+                    src: 'images/talk2.png',
+                    title: '다이어그램',
+                    description: '네이버톡톡 API를 호출하면 톡톡에서 고객에게 알림을 발송하고 성공 실패 여부를 전달해주는데 실패 건들에 대해서만 실패이유를 Log로 저장하도록 했습니다.'
+                },
+                {
+                    src: '',
+                    title: '데이터 가공',
+                    description: '발송 대상 고객 테이블을 따로 생성했는데, 이유는 암호화된 데이터를 미리 복호화하여 저장해 놓기 위함입니다. 이렇게 하면 복호화하는데 사용되는 리소스를 오로지 호출에만 사용할 수 있다고 판단했습니다.'
+                },
+                {
+                    src: 'images/talk1.png',
+                    title: '비동기와 병렬 프로세스',
+                    description: '요청을 1건씩 밖에 처리할 수 없었기에 Task, Parallel 사용하여 비동기 및 병렬처리 프로세스로 개발하였습니다. (스레드는 가용할 수 있는 최대로 설정)'
+                },
+                {
+                    src: 'images/talk3.png',
+                    title: '예외 처리',
+                    description: 'SeriLog를 사용해서 서버에 메모장 형태로 실패한 고객 데이터를 남겼습니다.'
+                },
+                {
+                    src: '',
+                    title: '결과',
+                    description: '결과적으로  총 발송량 : 68만건,  실패 발송량 : 2800건, 소요시간 : 37분, 발송 실패률 : 4% 기록 하였습니다. 스레드 12개를 사용하였고 1개의 스레드당 처리한 작업은 56,566건 이며 \'37분을 초로 변환하고 계산하면 스레드 1개가 1건의 API 호출하는데 소요된 시간은 0.0392초로 획기적으로 시간을 단축했습니다.' 
+                },
+            ]
+        },
+        project3: {
+            title: '데이터분석과 시각화',
+            subtitle: '데이터를 분석하고 유용한 데이터를 시각화하여 의사결정에 도움이 되기 위함',
+            images: [
+                {
+                    src: '',
+                    title: '고려사항',
+                    description: '의사결정에 필요한 데이터가 무엇인지 어떤식으로 시각화 되어야하는지 인터뷰가 필요했고 매출에 관련된 데이터라 아무나 접근 못하도록 권한이 필요했습니다.'
+                },
+                {
+                    src: 'images/static.png',
+                    title: '접근 제어를 위한 로그인',
+                    description: '로그인 페이지를 생성하여 특정 그룹의 계정들만 접근 가능하도록 처리했습니다.'
+                },
+                {
+                    src: 'images/static2.png',
+                    title: '통계 시각화',
+                    description: '대용량 데이터였기 때문에 DB에 부담을 주지 않기 위해서 원본 데이터 그대로를 불러와 코드 단계에서 연산하였습니다. TOP10 요소를 추가하여 좀 더 재미있게 표현해봤습니다. 기존에는 구현하기 쉽지 않은 디자인과 퍼블리싱이었지만 AI를 사용하니 너무나 신세계였습니다..'
+                },
+                {
+                    src: 'images/static3.png',
+                    title: '',
+                    description: ''
+                },
+                {
+                    src: 'images/static4.png',
+                    title: '',
+                    description: ''
+                },
+                {
+                    src: 'images/static5.png',
+                    title: '',
+                    description: ''
+                },
+                {
+                    src: 'images/static6.png',
+                    title: '',
+                    description: ''
+                },
+                {
+                    src: 'images/static7.png',
+                    title: '',
+                    description: ''
+                },
+                {
+                    src: '',
+                    title: '문제 해결',
+                    description: '특정 데이터를 구해야하는데 저장하고 있지 않는 데이터였습니다. 연산하는데 굉장히 많은 비용이 들어가는 데이터였고 조회 시간이 너무 오래걸리는게 문제였습니다. 도저히 연산으로는 안될 것 같아서 특정 테이블을 새로 생성하여 예약, 취소가 발생할 때마다 연산하여 데이터를 저장하도록 프로세스를 변경했습니다. (기존 예약에 대한 데이터는 마이그레이션)'
+                }
+            ]
+        }
+    };
+
+    function openImageModal(projectId) {
+        const project = projectImages[projectId];
+        if (project) {
+            const imagesHTML = project.images.map(img => `
+                <div class="project-image-item">
+                    <h4>${img.title}</h4>
+                    <p>${img.description}</p>
+                    ${img.src ? `<img src="${img.src}" alt="${img.title}" class="project-image-large" />` : ''}
+                </div>
+            `).join('');
+
+            const modalHTML = `
+                <div class="image-modal-header">
+                    <h2>${project.title}</h2>
+                    <p>${project.subtitle}</p>
+                </div>
+                <div class="image-modal-body">
+                    <div class="project-images-grid">
+                        ${imagesHTML}
+                    </div>
+                </div>
+            `;
+            document.getElementById('imageModalContent').innerHTML = modalHTML;
+            document.getElementById('imageModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function openModal(projectId) {
+        const project = projectReadmes[projectId];
+        if (project) {
+            // Create modal structure with header, preview, and body
+            const modalHTML = `
+                    <div class="modal-header">
+                        <h2>${project.title}</h2>
+                        <p>${project.subtitle || ''}</p>
+                    </div>
+                    <div class="modal-body">
+                        ${project.preview ? `
+                            <div class="modal-preview">
+                                <h3>👁️ 프로젝트 프리뷰</h3>
+                                <div class="preview-content">
+                                    <div class="preview-image">
+                                        ${project.preview.icon}
+                                    </div>
+                                    <div class="preview-info">
+                                        <p>${project.preview.description}</p>
+                                        <div class="preview-tags">
+                                            ${project.preview.tags.map(tag => `<span class="preview-tag">${tag}</span>`).join('')}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ` : ''}
+                        ${project.content}
+                    </div>
+                `;
+            modalContent.innerHTML = modalHTML;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    closeBtn.onclick = function () {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        if (event.target == imageModal) {
+            imageModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    // Image modal close functionality
+    const imageModal = document.getElementById('imageModal');
+    const imageCloseBtn = document.getElementsByClassName('image-close')[0];
+
+    imageCloseBtn.onclick = function () {
+        imageModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Smooth scrolling for navigation
+    document.addEventListener('DOMContentLoaded', function () {
+        // Add smooth scrolling behavior
+        const links = document.querySelectorAll('a[href^="#"]');
+        links.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    });
+</script>
+</body>
+</html>
