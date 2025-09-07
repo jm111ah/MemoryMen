@@ -512,10 +512,23 @@
         }
 
         .project-image-item p {
-            margin: 0;
+            margin: 0 0 15px 0;
             color: #6c757d;
             font-size: 0.95rem;
             line-height: 1.5;
+        }
+
+        .project-image-item .code-section {
+            margin-top: 15px;
+        }
+
+        .project-image-item .code-section h5 {
+            margin: 0 0 10px 0;
+            color: #495057;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         /* Custom Scrollbar for Image Modal */
@@ -1058,8 +1071,10 @@
             <div class="project-card">
                 <div class="project-header">
                     <span class="project-tag">포트폴리오</span>
-                    <div class="project-date">2025.08</div>
-                    <h3 class="project-title">나는 개발자다.</h3>
+                    <span class="project-tag">AWS</span>
+                    <span class="project-tag">반응형</span>
+                    <div class="project-date">25년 상반기</div>
+                    <h3 class="project-title">개발자 정성균 포트폴리오</h3>
                 </div>
                 <div class="project-body">
                     <ul class="project-features">
@@ -1067,25 +1082,28 @@
                         <li>도메인 생성부터 배포까지 전체 프로세스 경험</li>
                         <li>정성균이라는 개발자를 소개할 수 있는 공간</li>
                     </ul>
-                    <div class="project-tech">HTML/CSS, .NET, V0, AWS, DNS, Cursor</div>
-                    <div class="project-buttons">
+                    <div class="project-tech">HTML/CSS, V0, AWS, DNS</div>
+                    <div class="project-buttons" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
                         <button class="btn btn-readme" onclick="openModal('project1')">📖 README</button>
                         <button class="btn btn-image" onclick="openImageModal('project1')">🖼️ Detail</button>
+                        <button class="btn btn-github" onclick="openGitHub('project1')">🐙 GitHub</button>
+                        <button class="btn btn-link" onclick="openLink('project1')">🔗 Link</button>
                     </div>
                 </div>
             </div>
-            
+
             <div class="project-card">
                 <div class="project-header">
                     <span class="project-tag">아이디어</span>
-                    <div class="project-date">2025.04</div>
+                    <span class="project-tag">데이터 분석/통계</span>
+                    <span class="project-tag">데이터 시각화</span>
+                    <div class="project-date">25년 상반기</div>
                     <h3 class="project-title">유용한 데이터를 시각화하여 의사결정에 도움이 되자!</h3>
                 </div>
                 <div class="project-body">
                     <ul class="project-features">
                         <li>데이터 분석과 데이터 시각화 경험</li>
-                        <li>데이터의 중요성 </li>
-                        <li>Linq 사용한 통계 데이터 만들기 </li>
+                        <li>Linq 사용한 통계 데이터 만들기</li>
                     </ul>
                     <div class="project-tech">.NET, MSSQL, Dapper, Task, V0, JavaScript, JQuery, Chart.js</div>
                     <div class="project-buttons">
@@ -1098,7 +1116,9 @@
             <div class="project-card">
                 <div class="project-header">
                     <span class="project-tag">문제 해결</span>
-                    <div class="project-date">2024.10</div>
+                    <span class="project-tag">비동기</span>
+                    <span class="project-tag">병렬</span>
+                    <div class="project-date">24년 상반기</div>
                     <h3 class="project-title">대용량 데이터 기반, 네이버 톡톡 API 호출</h3>
                 </div>
                 <div class="project-body">
@@ -1110,6 +1130,43 @@
                     <div class="project-buttons">
                         <button class="btn btn-readme" onclick="openModal('project2')">📖 README</button>
                         <button class="btn btn-image" onclick="openImageModal('project2')">🖼️ Detail</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-tag">API</span>
+                    <div class="project-date">23년 하반기</div>
+                    <h3 class="project-title">정부 주도 숙박세일 페스타 쿠폰 API 연동</h3>
+                </div>
+                <div class="project-body">
+                    <ul class="project-features">
+                        <li>슬랙을 통한 외부 담당자와의 적극적인 소통</li>
+                        <li>예약,결제,취소 프로세스에 쿠폰 적용</li>
+                    </ul>
+                    <div class="project-tech">.NET, PostMan, MSSQL, Task, Dapper</div>
+                    <div class="project-buttons">
+                        <button class="btn btn-readme" onclick="openModal('project4')">📖 README</button>
+                        <button class="btn btn-image" onclick="openImageModal('project4')">🖼️ Detail</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-tag">간편결제 연동</span>
+                    <div class="project-date">23년 상반기</div>
+                    <h3 class="project-title">간편결제를 통한 결제 프로세스</h3>
+                </div>
+                <div class="project-body">
+                    <ul class="project-features">
+                        <li>Npay, INIpay 연동 경험</li>
+                    </ul>
+                    <div class="project-tech">.NET, JavaScript, HTML, MSSQL</div>
+                    <div class="project-buttons">
+                        <button class="btn btn-readme" onclick="openModal('project5')">📖 README</button>
+                        <button class="btn btn-image" onclick="openImageModal('project5')">🖼️ Detail</button>
                     </div>
                 </div>
             </div>
@@ -1288,107 +1345,82 @@
     const projectReadmes = {
         project1: {
             title: '나는 개발자다 - 포트폴리오 웹사이트',
-            subtitle: 'AI 도구를 활용하여 디자인부터 배포까지 직접 구현한 개발자 포트폴리오',
+            subtitle: '',
             preview: {
                 icon: '👨‍💻',
-                description: '개발자 정성균의 역량과 경험을 보여주는 포트폴리오 웹사이트입니다. AI 도구를 활용하여 디자인부터 배포까지 전체 과정을 직접 구현했습니다.',
-                tags: ['포트폴리오', 'AI 도구', '반응형', 'AWS']
+                description: '개발자 정성균의 역량과 경험을 보여주는 포트폴리오 웹사이트입니다. </br> AI 도구를 활용하여 디자인부터 배포까지 전체 과정을 직접 구현했습니다.',
+                tags: []
             },
             content: `
-                    <h3>🎯 프로젝트 목적</h3>
+                    <h3>🎯 목적</h3>
                     <ul>
-                        <li>개발자 정성균의 역량과 경험을 보여주는 포트폴리오</li>
-                        <li>AI 기술을 활용한 효율적인 개발 프로세스 경험</li>
-                        <li>전체 개발 과정을 직접 경험하여 실무 역량 향상</li>
+                        <li>개발자 정성균의 역량과 경험을 보여주기 위한 포트폴리오</li>
                     </ul>
                     
                     <h3>🛠 기술 스택</h3>
                     <ul>
-                        <li>Frontend: HTML, CSS, JavaScript</li>
-                        <li>Framework: .NET8</li>
-                        <li>Cloud: AWS</li>
-                        <li>Design: V0, Cursor</li>
+                        <li>Front: HTML/CSS, JavaScript, V0, Cursor IDE</li>
+                        <li>Back: .NET, AWS, DNS</li>
                     </ul>
                     
                     <h3>✨ 주요 기능</h3>
                     <ul>
                         <li>반응형 웹 디자인으로 모든 디바이스 지원</li>
-                        <li>개발자 소개 및 경력 사항</li>
+                        <li>개발자 정성균 소개 및 경력 사항</li>
                         <li>프로젝트 포트폴리오 및 기술 스택</li>
                     </ul>
                     
-                    <h3>🚀 개발 과정</h3>
+                    <h3>💡 포인트</h3>
                     <ul>
-                        <li>AI 도구를 활용한 디자인 및 레이아웃 구성</li>
-                        <li>HTML/CSS를 활용한 반응형 웹사이트 구현</li>
-                        <li>도메인 등록 및 AWS 호스팅 설정</li>
-                        <li>전체 개발 프로세스 직접 경험</li>
+                        <li>AI를 활용한 퍼블 및 디자인</li>
+                        <li>도메인 구매부터 배포까지 전체 과정 구현</li>
                     </ul>
-                    
-                    <h3>💡 학습 포인트</h3>
-                    <ul>
-                        <li>AI 도구를 활용한 효율적인 개발 워크플로우</li>
-                        <li>도메인 및 호스팅 인프라 구축 경험</li>
-                        <li>포트폴리오 웹사이트 기획 및 제작</li>
-                    </ul>
-                    
-                    <h3>🔗 링크</h3>
-                    <p>현재 보고 계신 웹사이트입니다!</p>
                 `
         },
         project2: {
             title: '네이버 톡톡 API 호출',
-            subtitle: '비동기와 병렬을 사용한 대용량 데이터 처리',
+            subtitle: '',
             preview: {
                 icon: '👨‍💻',
-                description: '60만건이 넘는 회원들에게 톡톡 알림을 보내야하는 상황에서 비동기와 병렬 프로세스를 통한 효율적인 처리',
-                tags: ['비동기', '병렬']
+                description: '60만명이 넘는 회원들에게 마케팅 용도로 네이버 톡톡 알림을 보내야하는 상황에서 비동기와 병렬을 사용하여 대용량 데이터를 처리하였습니다.',
+                tags: []
             },
             content: `
-                    <h3>🎯 문제 상황</h3>
+                    <h3>🎯 목적</h3>
                     <ul>
-                        <li>배열을 지원하지 않는 네이버 톡톡 API</li>
-                        <li>일반적인 동기 프로세스 처리시에 너무 오래 걸리는 시간</li>
+                        <li>마케팅 수신 동의한 고객들에게 네이버 톡톡 알림 발송</li>
                     </ul>
                     
                     <h3>🛠 기술 스택</h3>
                     <ul>
-                        <li>Framework: .NET, Task, Parallel</li>
-                        <li>DB: MSSQL</li>
-                        <li>Tool: PostMan</li>
+                        <li>Back : .NET, Task, Parallel, MSSQL</li>
                     </ul>
-                    
+
                     <h3>✨ 주요 기능</h3>
                     <ul>
                         <li>비동기 및 병렬 처리</li>
                         <li>요청 데이터 가공</li>
                     </ul>
                     
-                    <h3>🚀 개발 과정</h3>
+                    <h3>💡 포인트</h3>
                     <ul>
-                        <li>임시 테이블을 생성하여, 요청 데이터 가공</li>
-                        <li>Task, Parallel 사용한 비동기 병렬 프로세스</li>
-                    </ul>
-                    
-                    <h3>💡 학습 포인트</h3>
-                    <ul>
-                        <li>비동기, 병렬 개발 경험</li>
+                        <li>배열을 지원하지 않는 네이버 톡톡 API</li>
+                        <li>동적으로 처리하기에는 너무 많은 데이터</li>
                     </ul>
                 `
         },
         project3: {
             title: '데이터분석과 시각화',
-            subtitle: '데이터를 분석하고 유용한 데이터를 시각화하여 의사결정을 도와주는 프로젝트',
+            subtitle: '',
             preview: {
                 icon: '👨‍💻',
                 description: '하루에 200만이 넘는 트래픽과 비례하는 대용량 데이터를 분석하고 시각화하여 현명한 의사결정에 도움이 되고 싶었습니다.',
-                tags: ['데이터 분석', '데이터 시각화', '데이터 가공']
+                tags: []
             },
             content: `
-                    <h3>🎯 개발 이유</h3>
+                    <h3>🎯 목적</h3>
                     <ul>
-                        <li>엑셀 형식의 데이터보다 시각화가 회의 자료로 유리하다고 판단</li>
-                        <li>쌓여있는 데이터들을 활용해보고 싶었음</li>
+                        <li>가공되지 않은 데이터를 분석하고 시각화하여 의사결정 참고자료 제공</li>
                     </ul>
                     
                     <h3>🛠 기술 스택</h3>
@@ -1399,24 +1431,83 @@
                     
                     <h3>✨ 주요 기능</h3>
                     <ul>
-                        <li>대용량 데이터를 빠르게 조회</li>
-                        <li>그래프 시각화를 통한 이해하기 쉬운 통계</li>
-                        <li>TOP10 순위를 통한 비교 통계</li>
+                        <li>데이터 분석/통계</li>
+                        <li>데이터 시각화</li>
                     </ul>
                     
-                    <h3>🚀 개발 과정</h3>
+                    <h3>💡 포인트</h3>
                     <ul>
-                        <li>V0 통한 디자인 및 퍼블리싱 작업</li>
-                        <li>Task ,Dapper, Linq 사용한 개발</li>
-                    </ul>
-                    
-                    <h3>💡 학습 포인트</h3>
-                    <ul>
-                        <li>데이터 분석</li>
-                        <li>데이터 통계</li>
+                        <li>1년 단위의 대용량 데이터 조회</li>
+                        <li>가공되지 않은 데이터 활용</li>
                     </ul>
                 `
-        }
+        },
+        project4: {
+            title: '정부 주도 숙박세일 페스타 쿠폰 API',
+            subtitle: '대국민 숙박 할인 쿠폰 발급을 위한 개발',
+            preview: {
+                icon: '👨‍💻',
+                description: '국내여행 활성화 및 지역 관광 경제 회복을 위해 정부 주도로 진행되는 할인 쿠폰으로 사용자들이 쿠폰을 발급 받고 사용할 수 있도록하였습니다.',
+                tags: []
+            },
+            content: `
+                    <h3>🎯 목적</h3>
+                    <ul>
+                        <li>할인 쿠폰을 적용하여 사용자들에게 저렴한 요금을 제공하기 위함</li>
+                    </ul>
+                    
+                    <h3>🛠 기술 스택</h3>
+                    <ul>
+                        <li>Front: HTML/CSS, JavaScript, JQuery</li>
+                        <li>Back: .NET, Dapper, Task, Linq, MSSQL</li>
+                    </ul>
+                    
+                    <h3>✨ 주요 기능</h3>
+                    <ul>
+                        <li>인증</li>
+                        <li>발급</li>
+                        <li>사용</li>         
+                        <li>취소</li>
+                    </ul>
+                    <h3>💡 포인트</h3>
+                    <ul>
+                        <li>순간적으로 몰리는 대규모 트래픽</li>
+                        <li>짧은 테스트 기간</li>
+                    </ul>
+                `
+        },
+        project5: {
+            title: '간편결제를 통한 결제 프로세스 개발',
+            subtitle: 'Npay, INIpay 연동하여 간편한 결제 프로세스 개발',
+            preview: {
+                icon: '👨‍💻',
+                description: 'Npay, INIpay 연동 개발하면서 데이터 매핑 과정과 결제 실패에 대한 예외처리에 중점을 두고 개발하였습니다. </br> 다양한 간편결제를 연동하여 사용자들이 좀 더 간편하게 결제를 진행할 수 있도록 했습니다. ',
+                tags: []
+            },
+            content: `
+                    <h3>🎯 목적</h3>
+                    <ul>
+                        <li>보다 다양한 간편결제를 제공하여 사용자들이 쉽게 결제할 수 있도록하기 위함</li>
+                    </ul>
+                    
+                    <h3>🛠 기술 스택</h3>
+                    <ul>
+                        <li>Front: HTML, JavaScript</li>
+                        <li>Back: .NET, MSSQL</li>
+                    </ul>
+                    
+                    <h3>✨ 주요 기능</h3>
+                    <ul>
+                        <li>네이버페이(Npay) 연동</li>
+                        <li>이니페이(INIpay) 연동</li>
+                    </ul>
+                    <h3>💡 포인트</h3>
+                    <ul>
+                        <li>각 간편결제 API 데이터 매핑</li>
+                        <li>결제 실패에 대한 예외처리</li>
+                    </ul>
+                `
+        },
     };
 
     const projectImages = {
@@ -1426,30 +1517,44 @@
             images: [
                 {
                     src: 'images/po_1.png',
-                    title: '인사',
-                    description: '포트폴리오의 첫인상을 담당하는 영역입니다. 깔끔하고 모던한 디자인으로 방문자에게 깔끔한 인상을 주려고 했습니다.'
+                    title: '구조',
+                    description: '카테고리는 5가지로 소개, 정보, 스킬, 프로젝트, 커리어로 나눴고 최대한 잘 표현할 수 있도록 노력했습니다.'
                 },
                 {
                     src: 'images/po_2.png',
-                    title: '소개',
-                    description: '개발자 정성균은 무슨 사람인지 소개하는 섹션입니다.'
+                    title: '',
+                    description: ''
                 },
                 {
                     src: 'images/po_3.png',
-                    title: '스킬',
-                    description: '개발자 정성균이 사용할 수 있는 기술에 대한 섹션입니다.'
+                    title: '',
+                    description: ''
                 },
                 {
                     src: 'images/po_5.png',
-                    title: '프로젝트',
-                    description: '주요 프로젝트들을 카드 형태로 깔끔하게 정리하여 보여주는 프로젝트 섹션입니다.'
+                    title: '',
+                    description: ''
                 },
                 {
                     src: 'images/po_4.png',
-                    title: '커리어',
-                    description: '정성균은 어떤 회사에서 근무했고 어떤일을 했는지 알 수 있는 섹션입니다.'
+                    title: '',
+                    description: ''
                 },
-
+                {
+                    src: 'images/aws1.png',
+                    title: '서버',
+                    description: '서버는 가장 익숙하고 대중적인 AWS 선택했습니다. </br> AWS EC2는 기본적으로 3389 포트만 열려있어서 웹 사이트로 사용하기 위해서 80, 443 포트를 열어줬습니다. '
+                },
+                {
+                    src: 'images/aws2.png',
+                    title: '',
+                    description: ''
+                },
+                {
+                    src: 'images/DNS1.png',
+                    title: 'DNS',
+                    description: '도메인 구매와 DNS 등록은 가비아에서 진행하였습니다.'
+                },
             ]
         },
         project2: {
@@ -1457,24 +1562,19 @@
             subtitle: '비동기와 병렬을 사용한 대용량 데이터 처리',
             images: [
                 {
-                    src: '',
-                    title: '문제 상황',
-                    description: '60만건의 고객에게 네이버 톡톡 알림을 보내야하는 상황인데, API가 배열을 지원하지 않았습니다. 1건씩 처리하는 동기 방식은 불가능하다고 판단하여 비동기 방식으로 개발 방향을 잡았습니다.'
-                },
-                {
                     src: 'images/talk2.png',
-                    title: '다이어그램',
+                    title: '프로세스',
                     description: '네이버톡톡 API를 호출하면 톡톡에서 고객에게 알림을 발송하고 성공 실패 여부를 전달해주는데 실패 건들에 대해서만 실패이유를 Log로 저장하도록 했습니다.'
                 },
                 {
                     src: '',
                     title: '데이터 가공',
-                    description: '발송 대상 고객 테이블을 따로 생성했는데, 이유는 암호화된 데이터를 미리 복호화하여 저장해 놓기 위함입니다. 이렇게 하면 복호화하는데 사용되는 리소스를 오로지 호출에만 사용할 수 있다고 판단했습니다.'
+                    description: '발송 대상 고객 테이블을 따로 생성했는데 </br> 이유는 암호화된 데이터를 미리 복호화하여 저장해 놓기 위함입니다. </br> 이렇게 하면 복호화하는데 사용되는 리소스를 오로지 호출에만 사용할 수 있다고 판단했습니다.'
                 },
                 {
                     src: 'images/talk1.png',
-                    title: '비동기와 병렬 프로세스',
-                    description: '요청을 1건씩 밖에 처리할 수 없었기에 Task, Parallel 사용하여 비동기 및 병렬처리 프로세스로 개발하였습니다. (스레드는 가용할 수 있는 최대로 설정)'
+                    title: '비동기와 병렬',
+                    description: '요청을 1건씩 밖에 처리할 수 없었기에 Task, Parallel 사용하여 </br> 비동기 및 병렬처리 프로세스로 개발하였습니다. (스레드는 가용할 수 있는 최대로 설정)'
                 },
                 {
                     src: 'images/talk3.png',
@@ -1483,8 +1583,8 @@
                 },
                 {
                     src: '',
-                    title: '결과',
-                    description: '결과적으로  총 발송량 : 68만건,  실패 발송량 : 2800건, 소요시간 : 37분, 발송 실패률 : 4% 기록 하였습니다. 스레드 12개를 사용하였고 1개의 스레드당 처리한 작업은 56,566건 이며 \'37분을 초로 변환하고 계산하면 스레드 1개가 1건의 API 호출하는데 소요된 시간은 0.0392초로 획기적으로 시간을 단축했습니다.' 
+                    title: '문제 해결',
+                    description: '배열을 지원하지 않은 API를 비동기와 병렬 기능을 사용하여 </br> 총 발송량 : 68만건,  실패 발송량 : 2800건, 소요시간 : 37분, 발송 실패률 : 4% 기록 하였습니다. </br> 스레드 12개를 사용하였고 1개의 스레드당 처리한 작업은 56,566건 이며 </br> 37분을 초로 변환하고 계산하면 스레드 1개가 1건의 API 호출하는데 소요된 시간은 0.0392초로 획기적으로 시간을 단축했습니다.'
                 },
             ]
         },
@@ -1493,19 +1593,9 @@
             subtitle: '데이터를 분석하고 유용한 데이터를 시각화하여 의사결정에 도움이 되기 위함',
             images: [
                 {
-                    src: '',
-                    title: '고려사항',
-                    description: '의사결정에 필요한 데이터가 무엇인지 어떤식으로 시각화 되어야하는지 인터뷰가 필요했고 매출에 관련된 데이터라 아무나 접근 못하도록 권한이 필요했습니다.'
-                },
-                {
-                    src: 'images/static.png',
-                    title: '접근 제어를 위한 로그인',
-                    description: '로그인 페이지를 생성하여 특정 그룹의 계정들만 접근 가능하도록 처리했습니다.'
-                },
-                {
                     src: 'images/static2.png',
                     title: '통계 시각화',
-                    description: '대용량 데이터였기 때문에 DB에 부담을 주지 않기 위해서 원본 데이터 그대로를 불러와 코드 단계에서 연산하였습니다. TOP10 요소를 추가하여 좀 더 재미있게 표현해봤습니다. 기존에는 구현하기 쉽지 않은 디자인과 퍼블리싱이었지만 AI를 사용하니 너무나 신세계였습니다..'
+                    description: '대용량 데이터였기 때문에 DB에 부담을 주지 않기 위해서 </br> 원본 데이터 그대로를 불러와 코드 단계에서 연산하였습니다. </br> TOP10 요소를 추가하여 좀 더 재미있게 표현해봤습니다. </br> 기존에는 구현하기 쉽지 않은 디자인과 퍼블리싱이었지만 AI를 사용하여 쉽게 구현했습니다.'
                 },
                 {
                     src: 'images/static3.png',
@@ -1535,10 +1625,67 @@
                 {
                     src: '',
                     title: '문제 해결',
-                    description: '특정 데이터를 구해야하는데 저장하고 있지 않는 데이터였습니다. 연산하는데 굉장히 많은 비용이 들어가는 데이터였고 조회 시간이 너무 오래걸리는게 문제였습니다. 도저히 연산으로는 안될 것 같아서 특정 테이블을 새로 생성하여 예약, 취소가 발생할 때마다 연산하여 데이터를 저장하도록 프로세스를 변경했습니다. (기존 예약에 대한 데이터는 마이그레이션)'
+                    description: '특정 데이터를 구해야하는데 저장하고 있지 않는 데이터였습니다. </br> 연산하는데 굉장히 많은 비용이 들어가는 데이터였고 조회 시간이 너무 오래걸리는게 문제였습니다. </br> 도저히 연산으로는 안될 것 같아서 특정 테이블을 새로 생성하여 </br> 예약, 취소가 발생할 때마다 연산하여 데이터를 저장하도록 프로세스를 변경했습니다. </br> (기존 예약에 대한 데이터는 마이그레이션)'
                 }
             ]
-        }
+        },
+        project4: {
+            title: '정부 주도 숙박세일 페스타 쿠폰 API',
+            subtitle: '',
+            images: [
+                {
+                    src: 'images/festa01.png',
+                    title: '프로세스',
+                    description: '사용자는 핸드폰 인증을 받고 쿠폰 사용이 가능한지 확인합니다. <br> 사용이 가능하다면 3개의 쿠폰 중 하나를 선택해서 발급 받습니다. <br> 발급 받은 쿠폰은 결제할 때 사용이 가능하며 취소할 경우 쿠폰은 반환됩니다.'
+                },
+                {
+                    src: 'images/festa02.png',
+                    title: '인증',
+                    description: '1인당 1개의 쿠폰만 사용 가능하기에 </br> 고유한 핸드폰 인증을 통해서 암호화된 문자열 데이터를 리턴 받습니다. </br> 전달 받은 암호화 데이터는 DB에 저장하여 쿠폰을 발급받을 때 사용합니다.'
+                },
+                {
+                    src: '',
+                    title: '쿠폰 사용 여부 확인',
+                    description: '쿠폰은 중복 사용이 불가능하기에 </br> 발급 API를 호출하기전에 자체적으로 확인하는 단계로 쿠폰을 사용한 고객이 있는지 DB 조회합니다.'
+                },
+                {
+                    src: 'images/festa04.png',
+                    title: '발급',
+                    description: '발급 받을 수 있는 쿠폰은 총 3가지로 </br> 서울/경기/인천을 제외하고 어디서든 사용할 수 있는 전국편, </br> 지정된 지역에서만 사용 가능한 지역편, </br> 재난 피해를 입은 지역에서 사용할 수 있는 특별재난편으로 나뉩니다. </br> 인증 단계에서 전달받은 암호화 데이터를 가져와 요청 데이터에 추가하고 </br> 응답이 성공이라면 사용자에게 쿠폰 데이터를 추가해줍니다.'
+                },
+                {
+                    src: 'images/festa05.png',
+                    title: '사용',
+                    description: '결제시 쿠폰 금액만큼 금액이 차감되며 </br> 발급받은 쿠폰을 사용할 수 있는 유효 시간은 다음날 오전 8시까지 입니다. </br> 해당 시간까지 사용하지 않으면 쿠폰은 자동으로 초기화 됩니다.'
+                },
+                {
+                    src: '',
+                    title: '취소',
+                    description: '사용자가 예약을 취소할 경우 쿠폰은 반환 처리되며 </br> 사용 기간을 넘긴 쿠폰에 한해서 다시 발급 받도록 처리합니다.'
+                }
+            ]
+        },
+        project5: {
+            title: '간편결제를 통한 결제 프로세스 개발',
+            subtitle: '',
+            images: [
+                {
+                    src: 'images/pay01.png',
+                    title: '프로세스',
+                    description: '사용자가 결제할 간편결제를 선택하고 결제를 진행하는데 </br> 성공일 경우 결제 완료 페이지 노출과 함께 결제 데이터가 DB에 저장되고 </br> 결제가 실패일 경우에는 에러 페이지 노출 후 다시 결제 페이지로 이동 시킵니다. </br> 에러 페이지에 노출되는 메시지는 API에서 받은 메시지를 기반으로 보여줍니다.'
+                },
+                {
+                    src: 'images/pay02.png',
+                    title: '네이버페이(Npay) ',
+                    description: '사용자가 결제하기 버튼을 누르면 </br> 최초 스크립트에서 Npay에 필요한 create/open 파라미터 데이터를 생성 합니다. </br>그 다음 컨트롤러 단계에서 콜백 URL을 포함한 요청 데이터를 생성하고 호출 합니다. </br> 콜백이 정상적으로 되었다면 맨 처음 스크립트 단계에서 저장했던 </br> 데이터 가져와 Npay SDK에 적용하여 결제창을 호출합니다. </br> 콜백 상태값의 따른 유효성 검사 프로세스를 추가하므로서 </br> 결제 실패에 대한 매끄러운 프로세스를 구현하였습니다.'
+                },
+                {
+                    src: 'images/pay03.png',
+                    title: '이니페이(INIpay)',
+                    description: '이니페이의 경우 모바일과 PC 버전에 따라서 호출 방식이 다릅니다. </br>모바일의 경우 submit 방식이고 PC의 경우 프레임 형태의 팝업 구조 입니다. </br> 필요한 데이터도 달랐기 때문에 모바일, PC를 구분하여 데이터를 바인딩 하였습니다. '
+                }
+            ]
+        },
     };
 
     function openImageModal(projectId) {
@@ -1601,6 +1748,28 @@
             modalContent.innerHTML = modalHTML;
             modal.style.display = 'block';
             document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function openGitHub(projectId) {
+        const githubUrls = {
+            project1: 'https://github.com/jm111ah/MemoryMen/tree/main/Project/portfolio',
+        };
+
+        const url = githubUrls[projectId];
+        if (url) {
+            window.open(url, '_blank');
+        }
+    }
+
+    function openLink(projectId) {
+        const projectUrls = {
+            project1: 'https://portfolio.memoryman.kr/',
+        };
+
+        const url = projectUrls[projectId];
+        if (url) {
+            window.open(url, '_blank');
         }
     }
 
