@@ -1,29 +1,78 @@
 ﻿
 
 using System.Diagnostics;
+using System.Net.Http;
 
 public class Program
 {
+    private static readonly HttpClient httpClient = new HttpClient();
+    private static int successCount = 0;
+    private static int errorCount = 0;
+
     public static async Task Main()
     {
-        var st = Stopwatch.StartNew();
+        Console.WriteLine("=== API 호출 테스트 ===");
+        
+        // 설정
+        string baseUrl = "http://localhost:5197";
+        int totalRequests = 100; // 총 호출 개수
+        
+        Console.WriteLine($"Base URL: {baseUrl}");
+        Console.WriteLine($"총 호출 개수: {totalRequests}");
+        Console.WriteLine();
 
-        Task t1 = Default_Hello(1);
-        Task t2 = Default_Hello(2);
-        Task t3 = Default_Hello(3);
+        var stopwatch = Stopwatch.StartNew();
 
-        await Task.WhenAll(t1,t2, t3);
+        // API 호출
+        await MakeRequests(baseUrl, totalRequests);
 
-        st.Stop();
-        Console.WriteLine(st.ElapsedMilliseconds);
+        stopwatch.Stop();
+
+        // 결과 출력
+        Console.WriteLine();
+        Console.WriteLine("=== 결과 ===");
+        Console.WriteLine($"총 호출 개수: {totalRequests}");
+        Console.WriteLine($"성공: {successCount}");
+        Console.WriteLine($"실패: {errorCount}");
+        Console.WriteLine($"걸린 시간: {stopwatch.ElapsedMilliseconds}ms");
     }
 
-    public static async Task Default_Hello(int i)
+    private static async Task MakeRequests(string baseUrl, int totalRequests)
     {
-        Console.WriteLine($"{i}번째 Start");
-        await Task.Delay(2000);
-        Console.WriteLine($"{i}번째 End");
+        var tasks = new List<Task>();
+
+        for (int i = 1; i <= totalRequests; i++)
+        {
+            tasks.Add(MakeRequest(baseUrl, i));
+        }
+
+        await Task.WhenAll(tasks);
     }
 
+    private static async Task MakeRequest(string baseUrl, int requestId)
+    {
+        try
+        {
+            string url = $"{baseUrl}/Get";
+            
+            var response = await httpClient.GetAsync(url);
+            
+            if (response.IsSuccessStatusCode)
+            {
+                Interlocked.Increment(ref successCount);
+                Console.WriteLine($"요청 #{requestId}: 성공");
+            }
+            else
+            {
+                Interlocked.Increment(ref errorCount);
+                Console.WriteLine($"요청 #{requestId}: 실패 - {response.StatusCode}");
+            }
+        }
+        catch (Exception ex)
+        {
+            Interlocked.Increment(ref errorCount);
+            Console.WriteLine($"요청 #{requestId}: 예외 - {ex.Message}");
+        }
+    }
 }
 
