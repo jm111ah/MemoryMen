@@ -19,6 +19,8 @@ public class TrafficService : ITrafficService
         {
             IsResult = true
         }).ToList();
+
+        // return new();
     }
 
     public async Task<List<ResponseTrafficDto>> GetTrafficAsync()

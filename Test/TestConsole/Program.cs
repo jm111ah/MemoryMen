@@ -14,7 +14,7 @@ public class Program
         Console.WriteLine("=== API 호출 테스트 ===");
         
         // 설정
-        string baseUrl = "http://localhost:5197";
+        string baseUrl = "https://localhost:7193";
         int totalRequests = 100; // 총 호출 개수
         
         Console.WriteLine($"Base URL: {baseUrl}");

@@ -1,4 +1,5 @@
-﻿using Dapper;
+﻿using System.Data;
+using Dapper;
 using TrafficProcessor.Entity;
 using TrafficProcessor.Interface;
 
@@ -20,7 +21,7 @@ public class TrafficRepository : ITrafficRepository
         using (var con = _util.Connection())
         {
             var param = new DynamicParameters();
-            var result = con.Query<TrafficEntity>("", param);
+            var result = con.Query<TrafficEntity>("Get_TrafficTable", param ,commandType:CommandType.StoredProcedure);
             return result.ToList();
         }
     }
@@ -30,7 +31,7 @@ public class TrafficRepository : ITrafficRepository
         using (var con = _util.Connection())
         {
             var param = new DynamicParameters();
-            var result = await con.QueryAsync<TrafficEntity>("", param);
+            var result = await con.QueryAsync<TrafficEntity>("Get_TrafficTable", param, commandType:CommandType.StoredProcedure);
             return result.ToList();
         }
     }
