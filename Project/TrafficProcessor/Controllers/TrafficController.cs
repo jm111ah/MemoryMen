@@ -45,4 +45,20 @@ public class TrafficController : Controller
             return BadRequest(ex.Message);
         }
     }
+    
+    [Route("GetCacheAsync")]
+    [HttpGet]
+    public async Task<IActionResult> GetCacheAsync([FromQuery] RequestTrafficDto requestDto)
+    {
+        try
+        {
+            var result = await _service.GetTrafficAsync();
+            return Json(result);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
 }

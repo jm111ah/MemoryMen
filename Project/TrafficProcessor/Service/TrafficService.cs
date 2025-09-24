@@ -31,4 +31,13 @@ public class TrafficService : ITrafficService
             IsResult = true
         }).ToList();
     }
+    
+    public async Task<List<ResponseTrafficDto>> GetTrafficCacheAsync()
+    {
+        var data = await _trafficRepository.GetTrafficCacheAsync();
+        return data.Select(entity => new ResponseTrafficDto
+        {
+            IsResult = true
+        }).ToList();
+    }
 }
