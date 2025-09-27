@@ -15,12 +15,12 @@ public class TrafficService : ITrafficService
 
     public List<ResponseTrafficDto> GetTraffic()
     {
-        return _trafficRepository.GetTraffic().Select(entity => new ResponseTrafficDto
-        {
-            IsResult = true
-        }).ToList();
+        //return _trafficRepository.GetTraffic().Select(entity => new ResponseTrafficDto
+        //{
+        //    IsResult = true
+        //}).ToList();
 
-        // return new();
+        return new();
     }
 
     public async Task<List<ResponseTrafficDto>> GetTrafficAsync()

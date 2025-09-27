@@ -15,7 +15,7 @@ public class Program
         
         // 설정
         string baseUrl = "https://localhost:7193";
-        int totalRequests = 100; // 총 호출 개수
+        int totalRequests = 100000; // 총 호출 개수
         
         Console.WriteLine($"Base URL: {baseUrl}");
         Console.WriteLine($"총 호출 개수: {totalRequests}");

@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using TrafficProcessor.Dto;
 using TrafficProcessor.Interface;
 
@@ -20,15 +21,14 @@ public class TrafficController : Controller
     {
         try
         {
-            var result =  _service.GetTraffic();
+            var result = _service.GetTraffic();
             return Json(result);
         }
         catch (Exception ex)
         {
+            Log.Error(ex, "Get 호출 실패");
             return BadRequest(ex.Message);
         }
-        
-        
     }
 
     [Route("GetAsync")]
@@ -42,6 +42,7 @@ public class TrafficController : Controller
         }
         catch (Exception ex)
         {
+            Log.Error(ex, "GetAsync 호출 실패");
             return BadRequest(ex.Message);
         }
     }
@@ -57,6 +58,7 @@ public class TrafficController : Controller
         }
         catch (Exception ex)
         {
+            Log.Error(ex, "GetCacheAsync 호출 실패");
             return BadRequest(ex.Message);
         }
     }

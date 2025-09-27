@@ -1007,11 +1007,6 @@
                 <h3>이메일</h3>
                 <p>memoryman0107@gmail.com</p>
             </div>
-            @* <div class="about-item"> *@
-            @*     <i class="fas fa-graduation-cap"></i> *@
-            @*     <h3>학력</h3> *@
-            @*     <p>서울대학교<br>(컴퓨터공학부)</p> *@
-            @* </div> *@
         </div>
     </div>
 </section>
@@ -1071,22 +1066,24 @@
             
             <div class="project-card">
                 <div class="project-header">
-                    <span class="project-tag">개인 프로젝트</span>
+                    <span class="project-tag">대용량 트래픽</span>
+                    <span class="project-tag">비동기/병렬</span>
+                    <span class="project-tag">멀티 스레드</span>
                     <div class="project-date">25년 하반기</div>
-                    <h3 class="project-title">게코 매니저 서비스 플랫폼</h3>
+                    <h3 class="project-title">대용량 트래픽 처리 프로세스(진행중)</h3>
                 </div>
                 <div class="project-body">
                     <ul class="project-features">
-                        <li>실제 불편했던 요소를 직접 기획하고 구현하여 서비스화</li>
-                        <li>DB 설계부터 API, 프론트엔드, 배포까지 전체 개발 사이클 경험</li>
-                        <li>비동기 기반의 계층형 아키텍처 설계 및 개발</li>
+                        <li>계층형 디자인 패턴을 사용한 명확한 구조화</li>
+                        <li>멀티 스레드 기반 비동기 및 병렬 프로그래밍 경험</li>
+                        <li>캐싱 처리를 통한 성능 향상 경험</li>
                     </ul>
-                    <div class="project-tech">HTML/CSS, V0, AWS, DNS</div>
+                    <div class="project-tech">Task, Parallel, Thread, Cache</div>
                     <div class="project-buttons" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                        <button class="btn btn-readme" onclick="openModal('project1')">📖 README</button>
-                        <button class="btn btn-image" onclick="openImageModal('project1')">🖼️ Detail</button>
-                        <button class="btn btn-github" onclick="openGitHub('project1')">🐙 GitHub</button>
-                        <button class="btn btn-link" onclick="openLink('project1')">🔗 Link</button>
+                        <button class="btn btn-readme" onclick="openModal('project6')">📖 README</button>
+                        <button class="btn btn-image" onclick="openImageModal('project6')">🖼️ Detail</button>
+                        <button class="btn btn-github" onclick="openGitHub('project6')">🐙 GitHub</button>
+                        @* <button class="btn btn-link" onclick="openLink('project6')">🔗 Link</button> *@
                     </div>
                 </div>
             </div>
@@ -1532,35 +1529,36 @@
                 `
         },
         project6: {
-            title: '게코 매니저 플랫폼 서비스',
+            title: '대용량 트래픽 처리 프로세스 개발',
             subtitle: '',
             preview: {
                 icon: '👨‍💻',
-                description: '크레스티드 게코라는 애완 파충류를 키우고 있는데 </br> 개체가 늘어나니 각 개체별 정보를 잊기 쉽다는 문제를 해결하고 </br> 애완 게코의 생년월일, 성별, 모프, 사진과 같은 핵심 정보를 체계적으로 관리할 수 있는 웹 서비스 입니다. ',
+                description: '대용량 트래픽을 발생 시켜서 비동기와 병렬 그리고 멀티 스레드의 성능에 대해 학습해보기 위한 프로젝트',
                 tags: []
             },
             content: `
                     <h3>🎯 목적</h3>
                     <ul>
-                        <li>애완 게코의 생년월일, 성별, 모프, 사진, 건강 기록 등을 체계적으로 관리</li>
-                        <li>단순 기록을 넘어, 검색·필터·알림 기능으로 실제 사용 편의성 제공</li>
+                        <li>대용량 트래픽 처리 경험</li>
+                        <li>병렬, 비동기, 멀티 스레드 학습</li>
+                        <li>로컬 캐시, 분산 캐시 학습</li>
                     </ul>
                     
                     <h3>🛠 기술 스택</h3>
                     <ul>
-                        <li>Front: HTML/CSS, JavaScript, JQuery</li>
-                        <li>Back: .NET, Dapper, Task, MSSQL</li>
+                        <li>BackEnd: Task, Cache, Parallel, Thread</li>
                     </ul>
                     
                     <h3>✨ 주요 기능</h3>
                     <ul>
-                        <li>게코 데이터 CRUD</li>
-                        <li>이미지 업로드</li>
+                        <li>대용량 트래픽 만들기</li>
+                        <li>멀티 스레드를 사용한 비동기, 병렬 처리</li>
+                        <li>캐싱 처리</li>
                     </ul>
                     <h3>💡 포인트</h3>
                     <ul>
-                        <li>각 간편결제 API 데이터 매핑</li>
-                        <li>결제 실패에 대한 예외처리</li>
+                        <li>대용량 처리에 대한 동기방식과 차이</li>
+                        <li>캐싱 사용에 대한 장단점</li>
                     </ul>
                 `
         },
@@ -1742,6 +1740,37 @@
                 }
             ]
         },
+        project6: {
+            title: '대용량 트래픽 처리 프로세스',
+            subtitle: '대용량 트래픽을 발생 시켜서 비동기와 병렬 그리고 멀티 스레드의 성능에 대해 학습해보기 위한 프로젝트',
+            images: [
+                {
+                    src: 'images/traffic_01.png',
+                    title: '대용량 트래픽 생성하기',
+                    description: 'Console 환경에서 Test Request 생성 합니다. 비동기로 호출하며 소요 시간을 체크 합니다.'
+                },
+                {
+                    src: 'images/traffic_03.png',
+                    title: '계층형 디자인 패턴',
+                    description: '계층형 디자인 패턴을 사용하여, <br> 컨트롤러, 서비스, 리포지토리 계층으로 분리하였습니다. <br> 컨트롤러 단계에서는 들어온 요청에 대한 응답만 담당하며 <br> 데이터 처리에 대한 것은 서비스 단계에서 처리 합니다. <br> 리포지토리 단계에서는 ORM을 담당 합니다.'
+                },
+                {
+                    src: 'images/traffic_02.png',
+                    title: '동기/비동기 비교',
+                    description: '동기 방식과 비동기 방식 중, <br> 어느 형식이 성능이 더 좋은지 비교 합니다.'
+                },
+                {
+                    src: 'images/aws2.png',
+                    title: '',
+                    description: ''
+                },
+                {
+                    src: 'images/DNS1.png',
+                    title: 'DNS',
+                    description: '도메인 구매와 DNS 등록은 가비아에서 진행하였습니다.'
+                },
+            ]
+        },
     };
 
     function openImageModal(projectId) {
@@ -1810,6 +1839,7 @@
     function openGitHub(projectId) {
         const githubUrls = {
             project1: 'https://github.com/jm111ah/MemoryMen/tree/main/Project/portfolio',
+            project6: 'https://github.com/jm111ah/MemoryMen/tree/main/Project/TrafficProcessor',
         };
 
         const url = githubUrls[projectId];
